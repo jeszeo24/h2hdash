@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www" 
+    "start": "nodemon ./bin/www",
+    "migrate": "node model/database.js" 
   },
   "scriptsComments": {
-    "start": "Runs development build on a local server configured by server.js. // NOTE: Changed from node (whenever make a change, need to interrupt server and restart it) to nodemon, so it restarts automatically"
+    "start": "Runs development build on a local server configured by server.js. // NOTE: Changed from node (whenever make a change, need to interrupt server and restart it) to nodemon, so it restarts automatically",
+    "migrate": "Added new script that will be used to run migrations. When want to recreate DB tables, run <npm run migrate>"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
