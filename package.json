@@ -4,22 +4,27 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "migrate": "node model/database.js" 
+    "migrate": "node model/database.js"
   },
   "scriptsComments": {
     "start": "Runs development build on a local server configured by server.js. // NOTE: Changed from node (whenever make a change, need to interrupt server and restart it) to nodemon, so it restarts automatically",
     "migrate": "Added new script that will be used to run migrations. When want to recreate DB tables, run <npm run migrate>"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@material-ui/core": "^4.12.4",
+    "@mui/material": "^5.10.10",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
+    "country-state-city": "^3.1.2",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
     "express": "~4.16.1",
+    "i18n-iso-countries": "^7.5.0",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "react-timezone-select": "^1.3.2"
   }
 }
-
-
