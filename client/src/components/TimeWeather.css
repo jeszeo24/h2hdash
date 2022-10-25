@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+.compile {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: hidden;
+  font-size: 20px;
+  list-style: none;
+  height: 300px;
+}
+
+@font-face {
+  font-family: 'weathericons';
+  src: url('https://erikflowers.github.io/weather-icons/font/weathericons-regular-webfont.eot');
+  src: url('https://erikflowers.github.io/weather-icons/font/weathericons-regular-webfont.eot?#iefix') format('embedded-opentype'), url('https://erikflowers.github.io/weather-icons/font/weathericons-regular-webfont.woff2') format('woff2'), url('https://erikflowers.github.io/weather-icons/font/weathericons-regular-webfont.woff') format('woff'), url('https://erikflowers.github.io/weather-icons/font/weathericons-regular-webfont.ttf') format('truetype'), url('https://erikflowers.github.io/weather-icons/font/weathericons-regular-webfont.svg#weather_iconsregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.compile .icon-04n {
+  font-family: "weathericons";
+  content: '\f00d';
+}
+
+.compile .id0 {
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+.compile .id1 {
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
+.compile .id2 {
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(20,9,121,1) 11%, rgba(0,212,255,1) 100%);
+}

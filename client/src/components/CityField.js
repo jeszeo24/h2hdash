@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import "./CityField.css";
-import { Country, State, City }  from 'country-state-city';
-// Country-state-city list downloaded via https://www.npmjs.com/package/country-state-city
-
 
 function CityField(props) {
     const [city, setCity] = useState("");

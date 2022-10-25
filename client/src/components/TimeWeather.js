@@ -1,0 +1,46 @@
+import { Divider } from "@mui/material";
+import React from "react";
+import "./TimeWeather.css";
+
+
+function TimeWeather(props) {
+
+  return (
+    <div className="TimeWeather">
+      TIME WEATHER
+      
+      <ul className="compile">
+          {props.compile.map((c) => (
+              // in order to have unique classes for each list, created className with id in front because CSS does not recognize numbers as classname
+              <li key={c.id} className={`id${c.id}`}>
+                  <h2>{c.city}</h2>
+                  <div className="icon">
+                  <i className={c.icon}></i>
+                  <i className="wi wi-day-sunny"></i>
+                  {c.icon}
+                  </div>
+                  
+                  <div className="weather">
+                  {c.weather}{" "}{c.temperature}°C
+                  </div>
+                  
+                  <div className="time">
+                  {c.time}
+                  </div>
+                  
+              </li>
+          ))}
+      </ul>
+     
+    </div>
+  );
+}
+
+export default TimeWeather;
+
+// city: city, 
+//       weather: weather && weather.weather[0].main,
+//       temperature: weather && weather.main.temp,
+//       icon: weather && weather.weather[0].icon,
+//       time: time && time.datetime,
+//     }
