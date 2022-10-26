@@ -19,7 +19,6 @@ const TIME_API_KEY="b9320ebff64a4f69aa48f65296c8a20a";
 // }
 
 export default function App() {
-    // cities can be an array (push in here, map it out)
   const [cities, setCities] = useState([]);
   const [weather, setWeather] = useState(null);
   const [time, setTime] = useState(null);
@@ -28,10 +27,11 @@ export default function App() {
   const [notes, setNotes] = useState([]);
   const [dates, setDate] = useState("");
 
- function getCities(city) {
+ async function getCities(city) {
   setCities(cities => [...cities, city]);
-  getTime(city);
-  getWeather(city);
+  
+  await getTime(city);
+  await getWeather(city);
 
     let newObj = { 
       id: cities.length,
@@ -42,9 +42,12 @@ export default function App() {
       time: time && time.datetime
     }
 
+    // if (cities.length === 0) {
+    //   setCompile(compile => newObj = compile);
+    // } else {
     setCompile(compile => [...compile, newObj])
+    // };
  }
-
   console.log(compile);
   
 
@@ -69,6 +72,19 @@ export default function App() {
       setError(`Network error: ${err.message}`);
     }
   }
+
+  const MINUTE_MS = 60000;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getTime();
+    }, MINUTE_MS);
+  
+    return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
+  }, [])
+
+  // if nothing in brackets, call when page loads
+
 
   async function getTime(city) {
 
