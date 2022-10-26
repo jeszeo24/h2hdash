@@ -1,30 +1,23 @@
 import React, { useState } from "react";
 import "./NotesForm.css";
 
-const INIT_STATE = {
-  text: ""
-};
-
 function NotesForm(props) {
-  const [input, setInput] = useState(INIT_STATE);
+  const [input, setInput] = useState("");
 
 
   function handleChange(event) {
-    let { name, value } = event.target;
-    setInput(data => ({
-      ...data,
-      [name]: value
-    }));
+    setInput(event.target.value);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     // receive addNoteCb from App parent, and pass input to parent
-    props.addNoteCb(input);
-    setInput(INIT_STATE); // reset form fields
+    props.addNoteCb2(input);
+    setInput(""); // reset form fields
   }
 
   return (
+      <div>
     <form className="NoteForm" onSubmit={handleSubmit}>
         <textarea
             rows="8"
@@ -37,10 +30,9 @@ function NotesForm(props) {
         >
       </textarea>
 
-    <div>
-        <button type="submit">Submit</button>
-      </div>
+        <button type="submit">Save</button>
     </form>
+    </div>
   );
 }
 

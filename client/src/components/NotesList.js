@@ -1,20 +1,24 @@
 import React from "react";
-
+import "./NotesList.css";
+import { TbTrash } from "react-icons/tb"
+//NOTE: For icons, https://react-icons.github.io/react-icons/
 
 function NotesList(props) {
   return (
     <div className="NotesList">
       <ul>
-        {props.notes.map(n => (
+        {props.notes2.map(n => (
           <li key={n.id}>
             {n.text}
-            <button
-              type="button"
-              title="delete"
-              onClick={e => props.deleteCb(n.id)}
-            >
-              delete
-            </button>
+
+            <div className="footer">
+                {/* Because date also displays time, slice to only display date */}
+            <small>{(n.date).slice(0,10)}</small>
+            <TbTrash 
+            className="delete-icon"
+            onClick={e => props.deleteCb2(n.id)} />
+            </div>
+    
           </li>
         ))}
       </ul>

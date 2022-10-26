@@ -1,0 +1,39 @@
+.NotesList {
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.NotesList li {
+  background-image: url(../assets/post-it-note.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1rem;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Keep any spacing added to the text */
+  white-space: pre-wrap;
+}
+
+.delete-icon {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-gap: 1rem;
+  /* Notes: column cannot be smaller than 250px, cannot be bigger than 1fr (fractional unit is whatever is available) */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.NotesList footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

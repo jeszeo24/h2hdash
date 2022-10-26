@@ -10,9 +10,7 @@ function CityField(props) {
 
     function handleSubmit(e) {
       e.preventDefault();
-      props.getCitiesCb(city);
-      props.getWeatherCb(city);
-      props.getTimeCb(city);
+      props.getCitiesCb2(city);
       setCity("");
     }
 

@@ -1,54 +1,37 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import CityField from "./components/CityField";
-import TimeWeather from "./components/TimeWeather";
+import TimeWeatherView from "./views/TimeWeatherView";
 import NotesForm from "./components/NotesForm";
 import NotesList from "./components/NotesList";
-
+import NotesView from "./views/NotesView";
 
 const API_KEY = "95e5614d843306eba8cca48f943be4f3";
 const TIME_API_KEY="b9320ebff64a4f69aa48f65296c8a20a";
 
-// const INIT_OBJ = { 
-//   id: 0,
-//   city: "", 
-//   weather: "",
-//   temperature: "",
-//   icon: "",
-//   time: ""
-// }
-
 export default function App() {
   const [cities, setCities] = useState([]);
-  const [weather, setWeather] = useState(null);
-  const [time, setTime] = useState(null);
   const [error, setError] = useState("");
-  const [compile, setCompile] = useState([]);
   const [notes, setNotes] = useState([]);
-  const [dates, setDate] = useState("");
+  const [searchText, setSearchText] = useState("");
 
  async function getCities(city) {
-  setCities(cities => [...cities, city]);
-  
-  await getTime(city);
-  await getWeather(city);
+
+  let myWeather = await getWeather(city);
+  let myTime = await getTime(city);
 
     let newObj = { 
       id: cities.length,
       city: city, 
-      weather: weather && weather.weather[0].main,
-      temperature: weather && weather.main.temp,
-      icon: `icon-${weather && weather.weather[0].icon}`,
-      time: time && time.datetime
+      weather: myWeather.weather[0].main,
+      temperature: myWeather.main.temp,
+      icon: myWeather.weather[0].icon,
+      time: myTime.datetime
     }
-
-    // if (cities.length === 0) {
-    //   setCompile(compile => newObj = compile);
-    // } else {
-    setCompile(compile => [...compile, newObj])
-    // };
+  
+    setCities(cities => [...cities, newObj])
  }
-  console.log(compile);
+  console.log(cities);
   
 
   async function getWeather(city) {
@@ -62,7 +45,9 @@ export default function App() {
       if (response.ok) {
         // wait for data
         let data = await response.json();
-        setWeather(data);
+        // NOTE: Instead of setting state (because setting state is asynchronous), instead just return the data
+        // setWeather(data);
+        return data;
       } else {
         // Server error
         setError(`Server error: ${response.status} ${response.statusText}`);
@@ -73,15 +58,15 @@ export default function App() {
     }
   }
 
-  const MINUTE_MS = 60000;
+  // const MINUTE_MS = 60000;
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      getTime();
-    }, MINUTE_MS);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     getTime();
+  //   }, MINUTE_MS);
   
-    return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
-  }, [])
+  //   return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
+  // }, [])
 
   // if nothing in brackets, call when page loads
 
@@ -98,7 +83,9 @@ export default function App() {
       if (response.ok) {
         // wait for data
         let data = await response.json();
-        setTime(data);
+        // NOTE: Instead of setting state (because setting state is asynchronous), instead just return the data
+        // setTime(data);
+        return data;
       } else {
         // Server error
         setError(`Server error: ${response.status} ${response.statusText}`);
@@ -111,7 +98,7 @@ export default function App() {
 
   useEffect(() => {
     getNotes();
-  }, []);
+  }, [searchText]);
 
   async function getNotes() {
     try {
@@ -133,11 +120,12 @@ export default function App() {
 
   // POST (add) a new note
   async function addNote(input) {
+    input = {
+      text: input
+    }
     // NOTE: how do I pass a new date?
-    let date = new Date;
-    setDate(date);
-    // setDate(dates => [...dates, date]);
-    console.log(date);
+    input.date = new Date;
+    console.log(input);
 
     // Define fetch() options
     let options = {
@@ -184,26 +172,22 @@ export default function App() {
 
   return (
     <div className="App">
-      <p>{console.log(cities)}</p>
 
        {/* Need to check if weather and time exists/loaded, then only display - if not, will receive error message "Cannot read properties of null as defined in useState*/}
-       <CityField
+       <TimeWeatherView
+       cities={cities} 
        getCitiesCb={(city) => getCities(city)} 
-       getWeatherCb={(city) => getWeather(city)} 
-       getTimeCb={(city) => getTime(city)}
        />
-       {compile && <TimeWeather compile={compile}/> }
 
-       <NotesForm addNoteCb={addNote}/>
-
-       <div>
-       <NotesList
-       notes={notes}
+       <NotesView 
+       addNoteCb={addNote} // send NotesView addNoteCb
+       notes={notes.filter((note) =>
+        note.text.toLowerCase().includes(searchText)
+        )}
        deleteCb={deleteNote}
-       />
-       </div>
-       
-
+       searchNote={setSearchText}
+        />
+      
     </div>
   );
 }

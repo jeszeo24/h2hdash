@@ -10,14 +10,12 @@ function TimeWeather(props) {
       TIME WEATHER
       
       <ul className="compile">
-          {props.compile.map((c) => (
+          {props.cities2.map((c) => (
               // in order to have unique classes for each list, created className with id in front because CSS does not recognize numbers as classname
               <li key={c.id} className={`id${c.id}`}>
                   <h2>{c.city}</h2>
                   <div className="icon">
-                  <i className={c.icon}></i>
-                  <i className="wi wi-day-sunny"></i>
-                  {c.icon}
+                  <img src={`http://openweathermap.org/img/wn/${c.icon}@2x.png`} />
                   </div>
                   
                   <div className="weather">
