@@ -12,65 +12,65 @@ function TimeWeather(props) {
   const [newtime, setNewTime] = useState("");
   const [oldtime, setOldTime] = useState("");
 
- function refreshTime(){
-   if (c) {
-   let updatedT = c.time.slice(11) // no longer date object
-   setNewTime(updatedT); // set time?
-   console.log("this is the time from compile", updatedT)
+//  function refreshTime(){
+//    if (c) {
+//    let updatedT = c.time.slice(11) // no longer date object
+//    setNewTime(updatedT); // set time?
+//    console.log("this is the time from compile", updatedT)
 
-   let hour = updatedT.slice(0,2);
-   let minute = updatedT.slice(3,5);
-   let second = updatedT.slice(6)
+//    let hour = updatedT.slice(0,2);
+//    let minute = updatedT.slice(3,5);
+//    let second = updatedT.slice(6)
 
-  //  if (second <= 60) {
-  //    second++
-  //  }
+//   //  if (second <= 60) {
+//   //    second++
+//   //  }
 
-  //  if (second === 60 && minute < 60) {
-  //    minute++
-  //  }
+//   //  if (second === 60 && minute < 60) {
+//   //    minute++
+//   //  }
 
-  if (minute < 10) {
-    minute++;
-  }
+//   if (minute < 10) {
+//     minute++;
+//   }
 
-  if (minute < 60) {
-    minute++;
-  }
+//   if (minute < 60) {
+//     minute++;
+//   }
 
-   if (hour < 24 && minute === 59) {
-     hour++;
-   }
+//    if (hour < 24 && minute === 59) {
+//      hour++;
+//    }
 
-   if (hour === 24) {
-     hour = 0;
-   }
+//    if (hour === 24) {
+//      hour = 0;
+//    }
 
-   console.log("hour", hour);
-   console.log("min", minute);
-   console.log("sec", second);
+//    console.log("hour", hour);
+//    console.log("min", minute);
+//    console.log("sec", second);
 
-   setNewTime([hour,":",minute])
-   console.log("this is the new time", newtime);
-  }
-}
+//    setNewTime([hour,":",minute])
+//    console.log("this is the new time", newtime);
+//   }
+// }
 
-  const MINUTE_MS = 60000;
-  const SECONDS_MS = 1000;
+//   const MINUTE_MS = 60000;
+//   const SECONDS_MS = 1000;
 
   //  useEffect(() => {
   //   setInterval(refreshTime(), 60000); 
   // }, [])
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      refreshTime();
-    }, [MINUTE_MS]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     refreshTime();
+  //   }, [MINUTE_MS]);
 
-      return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
-  }, [])
+  //     return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
+  // }, [])
 
-  console.log(newtime);
+  // console.log(newtime);
 
   return (
     <div className="TimeWeather">
@@ -90,40 +90,18 @@ function TimeWeather(props) {
                   
                   <div className="time">
                   {c.time}
+                  {c.timezone}
                 
                   <div>
                   New time{newtime}
+                  {/* NOTE: Breaks everything, invalid hook call? */}
+                  {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={c.timezone_location}/> */}
                   </div>
                   
-                  <div>
-                    <Clock />
-                  </div>
                   </div>
                   
               </li> : null}
       </ul>
-    
-      
-      {/* <ul className="compile">
-          {props.compile.map((c) => (
-              // in order to have unique classes for each list, created className with id in front because CSS does not recognize numbers as classname
-              <li key={c.id} className={`id${c.id}`}>
-                  <h2>{c.city}</h2>
-                  <div className="icon">
-                  <img src={`http://openweathermap.org/img/wn/${c.icon}@2x.png`} />
-                  </div>
-                  
-                  <div className="weather">
-                  {c.weather}{" "}{c.temperature}°C
-                  </div>
-                  
-                  <div className="time">
-                  {c.time}
-                  </div>
-                  
-              </li>
-          ))}
-      </ul> */}
      
     </div>
   )

@@ -13,12 +13,26 @@
   background-repeat: no-repeat;
   background-position: center;
   padding: 1rem;
-  min-height: 170px;
+  height: 200px;
+  
+}
+
+.NotesList .text {
+  margin-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   /* Keep any spacing added to the text */
   white-space: pre-wrap;
+  overflow-y: scroll;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+.NotesList .text::-webkit-scrollbar {
+  display: none;
 }
 
 .delete-icon {

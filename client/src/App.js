@@ -50,7 +50,8 @@ export default function App() {
       weather: myWeather.weather[0].main,
       temperature: myWeather.main.temp,
       icon: myWeather.weather[0].icon,
-      time: myTime.datetime
+      time: myTime.datetime,
+      timezone: myTime.timezone_location
     }
   
     setCompile(compile => [...compile, newObj]);
@@ -201,7 +202,7 @@ export default function App() {
         />
 
         {/* <LuckGame /> */}
-        {/* <UploadFile /> */}
+        <UploadFile />
       
     </div>
   );

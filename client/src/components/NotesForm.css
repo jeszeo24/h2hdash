@@ -18,6 +18,10 @@ textarea {
     justify-content: space-between; */
 }
 
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
 textarea:focus {
     outline: none;
 }

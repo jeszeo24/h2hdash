@@ -1,6 +1,7 @@
 import React from "react";
 import CityField from "../components/CityField";
 import TimeWeather from "../components/TimeWeather";
+import Time from "../components/Time";
 import "./TimeWeatherView.css";
 
 // map through the cities and render TimeWeather component for each city
@@ -22,6 +23,10 @@ function TimeWeatherView(props) {
                 index={index}
                 time={props.time}
                  />
+
+                 {/* <Time
+                 compile={props.compile} 
+                 /> */}
                  </li>
             ))}
             </ul>

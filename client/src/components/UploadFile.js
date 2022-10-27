@@ -49,8 +49,8 @@ class UploadFile extends Component {
   return (
     <div className="UploadFile">
 
-      {/* <input type="file" onChange={this.onFileChange}/>
-      <button onClick={this.onFileUpload}>Click</button> */}
+      <input type="file" onChange={this.onFileChange}/>
+      <button onClick={this.onFileUpload}>Click</button>
     </div>
   );
 }
