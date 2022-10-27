@@ -1,13 +1,13 @@
 import React from "react";
 import "./NotesList.css";
 import { TbTrash } from "react-icons/tb"
-//NOTE: For icons, https://react-icons.github.io/react-icons/
+// NOTE: From https://react-icons.github.io/react-icons/
 
 function NotesList(props) {
   return (
     <div className="NotesList">
       <ul>
-        {props.notes2.map(n => (
+        {props.searched.map(n => (
           <li key={n.id}>
             {n.text}
 
@@ -22,6 +22,7 @@ function NotesList(props) {
           </li>
         ))}
       </ul>
+
     </div>
   );
 }

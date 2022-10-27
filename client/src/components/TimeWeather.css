@@ -9,17 +9,7 @@
 
 .compile {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  overflow: hidden;
-  font-size: 20px;
-  list-style: none;
-  height: 300px;
-}
 
-.compile .icon-04n {
-  font-family: "weathericons";
-  content: '\f00d';
 }
 
 .compile .id0 {

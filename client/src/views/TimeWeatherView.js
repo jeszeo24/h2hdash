@@ -1,7 +1,9 @@
 import React from "react";
 import CityField from "../components/CityField";
 import TimeWeather from "../components/TimeWeather";
+import "./TimeWeatherView.css";
 
+// map through the cities and render TimeWeather component for each city
 function TimeWeatherView(props) {
 
     return (
@@ -10,7 +12,26 @@ function TimeWeatherView(props) {
             getCitiesCb2={props.getCitiesCb} 
             /> 
             
-            <TimeWeather cities2={props.cities} />
+            {/* second parameter in map function is the index, passing index so that a unique id can be sent to TimeWeather to access each individual compile array object */}
+            <ul className="cities">
+            {props.cities.map((c, index) => (
+                <li key={c.id}>
+                <TimeWeather 
+                compile={props.compile}
+                cities={props.cities}
+                index={index}
+                time={props.time}
+                 />
+                 </li>
+            ))}
+            </ul>
+
+            {/* <TimeWeather 
+            cities2={props.cities}
+            /> */}
+            {/* // time passed as prop
+            // creates new state running time
+            // updated once a minute */}
             
         </div>
         

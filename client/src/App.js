@@ -2,20 +2,44 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import CityField from "./components/CityField";
 import TimeWeatherView from "./views/TimeWeatherView";
-import NotesForm from "./components/NotesForm";
-import NotesList from "./components/NotesList";
 import NotesView from "./views/NotesView";
+// import LuckGame from "./views/LuckGame";
+import UploadFile from "./components/UploadFile";
 
 const API_KEY = "95e5614d843306eba8cca48f943be4f3";
 const TIME_API_KEY="b9320ebff64a4f69aa48f65296c8a20a";
 
 export default function App() {
   const [cities, setCities] = useState([]);
+  const [compile, setCompile] = useState([]);
   const [error, setError] = useState("");
   const [notes, setNotes] = useState([]);
-  const [searchText, setSearchText] = useState("");
+  const [time, setTime] = useState("");
 
- async function getCities(city) {
+  function getCities(city) {
+    let newObj = { 
+      id: cities.length,
+      city: city, 
+    }
+
+    setCities(cities => [...cities, newObj]);
+    getCompile(city);
+  }
+
+  async function getTime(city) {
+
+    let myTime = await getTime(city);
+  
+      let newObj = { 
+        id: cities.length,
+        time: myTime.timezone_location
+      }
+    
+      setCompile(time => [...time, newObj]);
+   }
+    console.log(compile);
+
+ async function getCompile(city) {
 
   let myWeather = await getWeather(city);
   let myTime = await getTime(city);
@@ -29,10 +53,9 @@ export default function App() {
       time: myTime.datetime
     }
   
-    setCities(cities => [...cities, newObj])
+    setCompile(compile => [...compile, newObj]);
  }
-  console.log(cities);
-  
+  console.log(compile);
 
   async function getWeather(city) {
     // build URL
@@ -57,19 +80,6 @@ export default function App() {
       setError(`Network error: ${err.message}`);
     }
   }
-
-  // const MINUTE_MS = 60000;
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     getTime();
-  //   }, MINUTE_MS);
-  
-  //   return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
-  // }, [])
-
-  // if nothing in brackets, call when page loads
-
 
   async function getTime(city) {
 
@@ -98,7 +108,7 @@ export default function App() {
 
   useEffect(() => {
     getNotes();
-  }, [searchText]);
+  }, []); // if nothing in brackets, call when page loads
 
   async function getNotes() {
     try {
@@ -170,23 +180,28 @@ export default function App() {
     }
   }
 
+
   return (
     <div className="App">
 
        {/* Need to check if weather and time exists/loaded, then only display - if not, will receive error message "Cannot read properties of null as defined in useState*/}
        <TimeWeatherView
+       // For TimeWeather component
        cities={cities} 
+       compile={compile}
+       time={time}
+       // For CityField component
        getCitiesCb={(city) => getCities(city)} 
        />
 
        <NotesView 
        addNoteCb={addNote} // send NotesView addNoteCb
-       notes={notes.filter((note) =>
-        note.text.toLowerCase().includes(searchText)
-        )}
+       notes={notes}
        deleteCb={deleteNote}
-       searchNote={setSearchText}
         />
+
+        {/* <LuckGame /> */}
+        {/* <UploadFile /> */}
       
     </div>
   );

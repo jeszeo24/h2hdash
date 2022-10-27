@@ -7,6 +7,7 @@
 }
 
 .NotesList li {
+  cursor: pointer;
   background-image: url(../assets/post-it-note.png);
   background-size: contain;
   background-repeat: no-repeat;

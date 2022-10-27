@@ -1,0 +1,8 @@
+.cities {
+    display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: hidden;
+  font-size: 20px;
+  list-style: none;
+  height: 300px;
+}
