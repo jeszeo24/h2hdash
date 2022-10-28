@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import countries from "i18n-iso-countries";
 // Country list downloaded via https://www.npmjs.com/package/i18n-iso-countries
 // Additional reference: https://javascript.plainenglish.io/create-a-country-select-component-with-react-2021-a259bd0350d5
+import "./LuckGame.css";
 
 function LuckGame() {
     const [country, setCountry] = useState("");
@@ -29,27 +30,38 @@ function handleClick(e) {
     setCountry(result.country);
 
     console.log(countryArr[Math.floor(Math.random() * 251)]);
+
+    handleChangeView();
 };
 
-function handleChangeView(pic) {
+function handleChangeView() {
     setPic(true);
 }
  
 // QUESTION 1: Can I input this?
-let countryflag = `https://www.sciencekids.co.nz/images/pictures/flags680/${country}.jpg`
+// let countryflag = `https://www.sciencekids.co.nz/images/pictures/flags680/${country}.jpg`
+// ANSWER Using template literals as below and also {} for JavaScript (since return block is JSX)
+{/* <img src={`https://www.sciencekids.co.nz/images/pictures/flags680/${country}.jpg`}></img> */}
 
 // QUESTION 2: How do I toggle between?
 
   return (
-    <div className="CountryDropDown">
-        <img src="https://img.freepik.com/premium-vector/feeling-lucky-today-poster_105554-149.jpg?w=740">
-            </img>
+    <div className="LuckGame">
+        
+            { pic ? 
+            (
+                <div className="country">
+                    <p className="countrytext">
+                        {country}
+                    </p>
+                </div>
+            ) : (
+                <div className="lucky">
+                <img src="https://img.freepik.com/premium-vector/feeling-lucky-today-poster_105554-149.jpg?w=740"></img>
+                </div>
+            )}
             <button onClick={handleClick}>Where to next?</button>
-      <div>
-        {country}
-      </div>
-
-      <img src=""></img>
+            
     </div>
   );
 }

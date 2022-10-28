@@ -1,0 +1,16 @@
+.LuckGame .lucky img {
+    height: 400px;
+    margin-bottom: none;
+}
+
+.LuckGame .country {
+    height: 400px;
+    background-image: url("https://media1.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif?cid=ecf05e47a9s6x37x2q2wlsxbq0y4su6n0dhx1wegqdpi0v9b&rid=giphy.gif&ct=g");
+    background-repeat: no-repeat;
+    margin-bottom: none;
+}
+
+.LuckGame .country .countrytext {
+    height: 100px;
+    color: white;
+}

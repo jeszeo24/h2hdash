@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import CityField from "./components/CityField";
 import TimeWeatherView from "./views/TimeWeatherView";
 import NotesView from "./views/NotesView";
 import LuckGame from "./views/LuckGame";
 import UploadFile from "./components/UploadFile";
 import Clock from "react-live-clock";
-import CountryDropdown from "./components/Extras/CountryDropdown";
 
 const API_KEY = "95e5614d843306eba8cca48f943be4f3";
 const TIME_API_KEY="b9320ebff64a4f69aa48f65296c8a20a";
@@ -207,7 +205,7 @@ export default function App() {
 
         <UploadFile />
         
-        <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />
+        {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} /> */}
     </div>
   );
 }
