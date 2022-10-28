@@ -6,71 +6,84 @@ import Clock from "react-live-clock";
 // pass the time at which API responded, timer needs a starting point
 
 function TimeWeather(props) {
-  // NOTE: props.compile is an object, props.counter in unique number to each object
+  // NOTE: props.compile is an object received from TimeWeatherView, props.index is a unique number to each object
   let c = props.compile[props.index];
-  let t = props.time[props.index];
+  let t = props.time[props.index]; // NOTE: for react-live-clock if it still works?
   const [newtime, setNewTime] = useState("");
   const [oldtime, setOldTime] = useState("");
 
-//  function refreshTime(){
-//    if (c) {
-//    let updatedT = c.time.slice(11) // no longer date object
-//    setNewTime(updatedT); // set time?
-//    console.log("this is the time from compile", updatedT)
+ function refreshTime(){
+   if (c) {
+   let updatedT = c.time.slice(11) // no longer date object
+   setOldTime(updatedT); // set time?
+   console.log("this is the time from compile", updatedT)
+  }
+  newTime();
+}
 
-//    let hour = updatedT.slice(0,2);
-//    let minute = updatedT.slice(3,5);
-//    let second = updatedT.slice(6)
+// NOTE: useEffect to call refreshTime when props is changed/passed?
+useEffect(() => {
+  refreshTime(); 
+}, [c])
 
-//   //  if (second <= 60) {
-//   //    second++
-//   //  }
+function newTime(){
+   let hour = oldtime.slice(0,2);
+   let minute = oldtime.slice(3,5);
+   let second = oldtime.slice(6)
 
-//   //  if (second === 60 && minute < 60) {
-//   //    minute++
-//   //  }
+  //  if (second <= 60) {
+  //    second++
+  //  }
 
-//   if (minute < 10) {
-//     minute++;
-//   }
+  //  if (second === 60 && minute < 60) {
+  //    minute++
+  //  }
 
-//   if (minute < 60) {
-//     minute++;
-//   }
+  // QUESTION: How do I add 0 to the front of a single digit?
+  if (minute < 10) {
+    minute++;
+    return "0" + minute;
+  }
 
-//    if (hour < 24 && minute === 59) {
-//      hour++;
-//    }
+  if (minute < 60) {
+    minute++;
+  }
 
-//    if (hour === 24) {
-//      hour = 0;
-//    }
+   if (hour < 24 && minute === 59) {
+     hour++;
+   }
 
-//    console.log("hour", hour);
-//    console.log("min", minute);
-//    console.log("sec", second);
+   if (hour === 24) {
+     hour = 0;
+   }
 
-//    setNewTime([hour,":",minute])
-//    console.log("this is the new time", newtime);
-//   }
-// }
+   console.log("hour", hour);
+   console.log("min", minute);
+   console.log("sec", second);
 
-//   const MINUTE_MS = 60000;
-//   const SECONDS_MS = 1000;
+   setNewTime([hour,":",minute])
+   console.log("this is the new time", newtime);
+   return newTime;
+  }
 
+  const MINUTE_MS = 60000;
+  const SECONDS_MS = 1000;
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      newTime();
+    }, [MINUTE_MS]);
+
+      return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
+  }, [])
+
+  console.log(newtime);
+
+  // REFERENCE:
   //  useEffect(() => {
   //   setInterval(refreshTime(), 60000); 
   // }, [])
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     refreshTime();
-  //   }, [MINUTE_MS]);
-
-  //     return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
-  // }, [])
-
-  // console.log(newtime);
 
   return (
     <div className="TimeWeather">

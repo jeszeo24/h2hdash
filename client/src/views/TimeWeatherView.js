@@ -4,6 +4,7 @@ import TimeWeather from "../components/TimeWeather";
 import Time from "../components/Time";
 import "./TimeWeatherView.css";
 
+
 // map through the cities and render TimeWeather component for each city
 function TimeWeatherView(props) {
 
@@ -24,13 +25,13 @@ function TimeWeatherView(props) {
                 time={props.time}
                  />
 
-                 {/* <Time
-                 compile={props.compile} 
-                 /> */}
                  </li>
             ))}
             </ul>
 
+            <Time
+                 compile={props.compile} 
+                 />
             {/* <TimeWeather 
             cities2={props.cities}
             /> */}

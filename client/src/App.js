@@ -3,8 +3,10 @@ import "./App.css";
 import CityField from "./components/CityField";
 import TimeWeatherView from "./views/TimeWeatherView";
 import NotesView from "./views/NotesView";
-// import LuckGame from "./views/LuckGame";
+import LuckGame from "./views/LuckGame";
 import UploadFile from "./components/UploadFile";
+import Clock from "react-live-clock";
+import CountryDropdown from "./components/Extras/CountryDropdown";
 
 const API_KEY = "95e5614d843306eba8cca48f943be4f3";
 const TIME_API_KEY="b9320ebff64a4f69aa48f65296c8a20a";
@@ -134,7 +136,7 @@ export default function App() {
     input = {
       text: input
     }
-    // NOTE: how do I pass a new date?
+    // NOTE: Insert date as below
     input.date = new Date;
     console.log(input);
 
@@ -201,9 +203,11 @@ export default function App() {
        deleteCb={deleteNote}
         />
 
-        {/* <LuckGame /> */}
+        <LuckGame />
+
         <UploadFile />
-      
+        
+        <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />
     </div>
   );
 }

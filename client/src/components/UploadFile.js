@@ -21,7 +21,7 @@ class UploadFile extends Component {
 
    // On file upload 
   onFileUpload = () => {
-       // FormData is an interface that provides a way to esasily construct a set of key/value pairs representing form fields and their values
+       // FormData is an interface that provides a way to easily construct a set of key/value pairs representing form fields and their values
        // allows us to include files in a post request
        const formData = new FormData();
 

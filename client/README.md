@@ -14,24 +14,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `mysql -u root -p`
-
-Type `mysql -u root -p` to access the MySQL CLI using your password.
-
-In the MySQL CLI, type `create database todos;` to create a database in MySQL.
-
-Run the following in the MySQL CLI: `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YOUR_PASSWORD';` (replace `YOUR_PASSWORD` with your actual password)
-
-Run `node model/database.js` in your **TERMINAL**, in the **project** folder (not your MySQL CLI! Open a new terminal window for this). This will create a table called 'items' in your database.
-
-### Run Your Development Servers
-
-- Run `npm start` in project directory to start the Express server on port 5000
-- `cd client` and run `npm start` to start client server in development mode with hot reloading in port 3000.
-- Client is configured so all API calls will be proxied to port 5000 for a smoother development experience. Yay!
-- You can test your client app in `http://localhost:3000`
-- You can test your API in `http://localhost:5000/api`
-
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\

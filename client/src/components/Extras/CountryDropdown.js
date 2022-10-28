@@ -21,6 +21,8 @@ function CountryDropdown(props) {
 
   console.log(countryObj);
 
+  // Math.floor(Math.random() * 101);
+
   // Use Object.entries(countryObj) to return an array of key-value pairs (Need an array to map)
   // The same as iterating with a for...in loop
   const countryArr = Object.entries(countryObj).map(([key, value]) => {
@@ -30,18 +32,26 @@ function CountryDropdown(props) {
     };
   });
 
-  console.log(countryArr);
+  let result = countryArr[Math.floor(Math.random() * 251)]
 
+  console.log(countryArr[Math.floor(Math.random() * 251)]);
+
+  let countryflag = `https://www.sciencekids.co.nz/images/pictures/flags680/${result.country}.jpg`
   return (
     <div className="CountryDropDown">
-      <select onChange={handleChange}>
+      <div>
+        {result.country}
+      </div>
+
+      <img src=""></img>
+      {/* <select onChange={handleChange}>
         {countryArr.map(({ country, code }) => (
             // since code is unique, can be used as key
           <option key={code} value={code}>
             {country}
           </option>
         ))}
-      </select>
+      </select> */}
     </div>
   );
 }
