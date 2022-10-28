@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import "./CarouselControls.css";
 
-function CarouselControls() {
+function CarouselControls(props) {
   
-
   return (
     <div className="carousel-control">
-        <button className="left">Prev</button>
-        <button className="right">Next</button>
+        {/* Received prevCb and nextCb(functions) as props from parent PhotoCarouselView */}
+        <button className="left" onClick={props.prevCb}>Prev</button>
+        <button className="right" onClick={props.nextCb}>Next</button>
     </div>
   );
 }

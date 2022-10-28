@@ -1,9 +1,9 @@
 .carousel-control {
-    background-color: rgba(0,0,0,0.5);
+    /* background-color: rgba(0,0,0,0.5); */
     border: none;
     display: inline-block;
-    position: absolute;
-    /* Positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed) */
+    position: static;
+    /* this position needs to be static (default is static) so buttons can be placed absolute (relative to it) */
     height: 50px;
     width: 70px;
     top: calc(50% - 25px);
@@ -13,11 +13,10 @@
 
 .carousel-control .left {
     left: 0;
-    background-color: blue;
     background-color: rgba(0,0,0,0.5);
     border: none;
     display: inline-block;
-    position: fixed;
+    position: absolute;
     /* Positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed) */
     height: 50px;
     width: 70px;
