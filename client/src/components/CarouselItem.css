@@ -1,4 +1,5 @@
 .CarouselItem {
-    display: inline-block;
+    display: inline-block; 
+    /* causes the items to be next to each other */
     width: 100%; 
 }

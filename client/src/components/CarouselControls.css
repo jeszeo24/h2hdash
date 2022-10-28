@@ -1,0 +1,42 @@
+.carousel-control {
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    display: inline-block;
+    position: absolute;
+    /* Positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed) */
+    height: 50px;
+    width: 70px;
+    top: calc(50% - 25px);
+    color: #f3f3f3;
+    cursor: pointer;
+}
+
+.carousel-control .left {
+    left: 0;
+    background-color: blue;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    display: inline-block;
+    position: fixed;
+    /* Positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed) */
+    height: 50px;
+    width: 70px;
+    top: calc(50% - 25px);
+    color: #f3f3f3;
+    cursor: pointer;
+}
+
+.carousel-control .right {
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    display: inline-block;
+    position: absolute;
+    /* Positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed) */
+    height: 50px;
+    width: 70px;
+    top: calc(50% - 25px);
+    color: #f3f3f3;
+    cursor: pointer;
+}
+

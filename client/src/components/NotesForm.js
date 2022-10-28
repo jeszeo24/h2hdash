@@ -31,7 +31,7 @@ function NotesForm(props) {
         >
       </textarea>
 
-        <button type="submit">Save</button>
+        <button className="Notebutton" type="submit">Save</button>
     </form>
     </div>
   );

@@ -3,7 +3,7 @@ import CityField from "../components/CityField";
 import TimeWeather from "../components/TimeWeather";
 import Time from "../components/Time";
 import "./TimeWeatherView.css";
-
+import "./PhotoCarouselView.css";
 
 // map through the cities and render TimeWeather component for each city
 function TimeWeatherView(props) {
