@@ -28,10 +28,5 @@
     /* specifies a transition effect with a slow start, then fast, then end slowly */
 }
 
-.carousel-item {
-    display: inline-block;
-    width: 100%; 
-}
-
 
 

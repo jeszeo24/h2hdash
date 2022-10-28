@@ -3,3 +3,7 @@
     /* causes the items to be next to each other */
     width: 100%; 
 }
+
+.CarouselItem img {
+    width: 100%;
+}
