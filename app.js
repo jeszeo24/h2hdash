@@ -8,8 +8,8 @@ var fileUpload = require("express-fileupload");
 
 var indexRouter = require('./routes/index');
 var notesRouter = require('./routes/notes');
-// create router for images
-var imageRouter = require("./routes/images");
+// create router for files
+var filesRouter = require("./routes/files");
 
 var app = express();
 
@@ -37,7 +37,7 @@ app.use(
 // Register all routes (stored in other files)
 app.use('/', indexRouter);
 app.use('/notes', notesRouter);
-// need to use images router
-app.use('/images', imageRouter);
+// need to use files router
+app.use('/files', filesRouter);
 
 module.exports = app;
