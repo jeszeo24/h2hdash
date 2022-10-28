@@ -3,8 +3,10 @@ import "./App.css";
 import TimeWeatherView from "./views/TimeWeatherView";
 import NotesView from "./views/NotesView";
 import LuckGame from "./views/LuckGame";
-import UploadFile from "./components/UploadFile";
+// import UploadFile from "./components/UploadFile_Germinal";
 import Clock from "react-live-clock";
+import UploadForm from './components/UploadForm';
+import FileList from './components/FileList';
 
 const API_KEY = "95e5614d843306eba8cca48f943be4f3";
 const TIME_API_KEY="b9320ebff64a4f69aa48f65296c8a20a";
@@ -15,6 +17,7 @@ export default function App() {
   const [error, setError] = useState("");
   const [notes, setNotes] = useState([]);
   const [time, setTime] = useState("");
+  const [files, setFiles] = useState([]);
 
   function getCities(city) {
     let newObj = { 
@@ -181,6 +184,43 @@ export default function App() {
     }
   }
 
+  useEffect(() => {
+    getFiles();
+}, []);
+
+async function getFiles() {
+    try {
+        let response = await fetch('/files');
+        if (response.ok) {
+            let data = await response.json();
+            setFiles(data);
+        } else {
+            console.log(`Server error: ${response.status}: ${response.statusText}`);
+        }
+    } catch (err) {
+        console.log(`Network error: ${err.message}`);
+    }
+}
+
+async function uploadFile(formData) {
+    let options = {
+        method: 'POST',
+        body: formData
+    };
+
+    try {
+        let response = await fetch('/files', options);
+        if (response.ok) {
+            // Server responds with updated array of files
+            let data = await response.json();
+            setFiles(data);
+        } else {
+            console.log(`Server error: ${response.status}: ${response.statusText}`);
+        }
+    } catch (err) {
+        console.log(`Network error: ${err.message}`);
+    }
+}
 
   return (
     <div className="App">
@@ -203,7 +243,13 @@ export default function App() {
 
         <LuckGame />
 
-        <UploadFile />
+        <h1>Let's Upload Files!</h1>
+
+            <h2>Upload New File</h2>
+            <UploadForm uploadCb={fd => uploadFile(fd)} />
+
+            <h2>All Files</h2>
+            <FileList files={files} />
         
         {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} /> */}
     </div>

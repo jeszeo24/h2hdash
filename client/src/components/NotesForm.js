@@ -13,7 +13,8 @@ function NotesForm(props) {
     event.preventDefault();
     // receive addNoteCb from App parent, and pass input to parent
     props.addNoteCb2(input);
-    setInput(""); // reset form fields
+    setInput(""); // reset form fields 
+    // QUESTION: WHY IS IT NOT RESETTING?
   }
 
   return (

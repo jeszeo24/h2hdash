@@ -37,6 +37,10 @@ function handleClick(e) {
 function handleChangeView() {
     setPic(true);
 }
+
+function reset() {
+    setPic(false);
+}
  
 // QUESTION 1: Can I input this?
 // let countryflag = `https://www.sciencekids.co.nz/images/pictures/flags680/${country}.jpg`
@@ -47,10 +51,9 @@ function handleChangeView() {
 
   return (
     <div className="LuckGame">
-        
             { pic ? 
             (
-                <div className="country">
+                <div onClick={reset} className="country">
                     <p className="countrytext">
                         {country}
                     </p>
@@ -61,7 +64,6 @@ function handleChangeView() {
                 </div>
             )}
             <button onClick={handleClick}>Where to next?</button>
-            
     </div>
   );
 }
