@@ -7,6 +7,7 @@ import LuckGame from "./views/LuckGame";
 import Clock from "react-live-clock";
 import UploadForm from './components/UploadForm';
 import FileList from './components/FileList';
+import PhotoCarouselView from "./views/PhotoCarouselView"
 
 const API_KEY = "95e5614d843306eba8cca48f943be4f3";
 const TIME_API_KEY="b9320ebff64a4f69aa48f65296c8a20a";
@@ -242,6 +243,8 @@ async function uploadFile(formData) {
         />
 
         <LuckGame />
+
+        <PhotoCarouselView />
 
         <h1>Let's Upload Files!</h1>
 
