@@ -1,9 +1,16 @@
 .NotesList {
-  max-width: 960px;
+  /* max-width: auto; */
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.NotesList ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0px;
+  margin: 0px;
 }
 
 .NotesList li {
@@ -13,8 +20,8 @@
   background-repeat: no-repeat;
   background-position: center;
   padding: 1rem;
-  height: 200px;
-  
+  height: 180px;
+  width: 180px;
 }
 
 .NotesList .text {
@@ -29,6 +36,7 @@
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
   width: 100%;
+  font-size: small;
 }
 
 .NotesList .text::-webkit-scrollbar {

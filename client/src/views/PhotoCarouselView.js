@@ -63,6 +63,7 @@ function PhotoCarouselView(props) {
 //   }, [])
 
   return (
+      <div className="PhotoCarouselView">
     <div className="PhotoCarousel">
        <div className="carousel" style={{ maxWidth : props.width }}>
            <div 
@@ -89,6 +90,7 @@ function PhotoCarouselView(props) {
            nextCb={next}
            />}  
         </div>  
+    </div>
     </div>
   );
 }

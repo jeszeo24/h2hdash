@@ -1,0 +1,38 @@
+.LuckGameView {
+    width: 100%;
+    /* margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px; */
+    border: solid rgb(250, 250, 250);
+    border-radius: 1%;
+    height: 370px;
+  }
+
+.LuckGame .lucky img {
+    height: 250px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.LuckGame .country {
+    height: 300px;
+    background-image: url("https://media1.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif?cid=ecf05e47a9s6x37x2q2wlsxbq0y4su6n0dhx1wegqdpi0v9b&rid=giphy.gif&ct=g");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.LuckGame .country .countrytext {
+    height: 200px;
+    white-space: pre-wrap;
+    font-size: 8vh;
+    color: white;
+    text-align: center;
+    padding: 80px 10px;
+    vertical-align: middle;
+    line-height: 8vh;
+}

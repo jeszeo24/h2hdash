@@ -9,7 +9,7 @@ import "./PhotoCarouselView.css";
 function TimeWeatherView(props) {
 
     return (
-        <div>
+        <div className="TimeWeatherView">
             <CityField 
             getCitiesCb2={props.getCitiesCb} 
             /> 

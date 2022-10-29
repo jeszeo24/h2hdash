@@ -1,0 +1,10 @@
+.NotesView {
+    width: 100%;
+    /* margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px; */
+    border: solid rgb(250, 250, 250);
+    border-radius: 1%;
+    height: 420px;
+  }

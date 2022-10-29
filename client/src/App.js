@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import TimeWeatherView from "./views/TimeWeatherView";
 import NotesView from "./views/NotesView";
-import LuckGame from "./views/LuckGame";
+import LuckGameView from "./views/LuckGameView";
 // import UploadFile from "./components/UploadFile_Germinal";
 import Clock from "react-live-clock";
 import UploadForm from './components/UploadForm';
@@ -229,8 +229,10 @@ async function uploadFile(formData) {
 }
 
   return (
-    <div className="App">
-
+    <div className="App container-fluid">
+      {/* If using container, responsive pixel width (but this is set, smaller than whole page) versus container-fluid provides width 100% across */}
+      <div className="row">
+        <div className="col-sm-6">
        {/* Need to check if weather and time exists/loaded, then only display - if not, will receive error message "Cannot read properties of null as defined in useState*/}
        <TimeWeatherView
        // For TimeWeather component
@@ -240,15 +242,17 @@ async function uploadFile(formData) {
        // For CityField component
        getCitiesCb={(city) => getCities(city)} 
        />
-
+       </div>
+        <div className="col-sm-6">
        <NotesView 
        addNoteCb={addNote} // send NotesView addNoteCb
        notes={notes}
        deleteCb={deleteNote}
         />
+        </div>
 
-        <LuckGame />
-
+        <div className="row">
+        <div className="col-sm-6">
         <PhotoCarouselView 
         slides={slides}
         interval={5000}
@@ -257,15 +261,23 @@ async function uploadFile(formData) {
         autoPlay={true}
         width="600px"/>
 
-        <h1>Let's Upload Files!</h1>
+        {/* <h1>Let's Upload Files!</h1>
 
             <h2>Upload New File</h2>
             <UploadForm uploadCb={fd => uploadFile(fd)} />
 
             <h2>All Files</h2>
-            <FileList files={files} />
+            <FileList files={files} /> */}
+        
+        </div>
+        <div className="col-sm-6">
+        <LuckGameView />
+        </div>
+
         
         {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} /> */}
+        </div>
+    </div>
     </div>
   );
 }

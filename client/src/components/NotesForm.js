@@ -19,13 +19,13 @@ function NotesForm(props) {
 
   return (
       <div>
-    <form className="NoteForm" onSubmit={handleSubmit}>
+    <form className="NoteForm lh-sm" onSubmit={handleSubmit}>
         <textarea
             rows="8"
             cols="18"
             type="text"
             name="text"
-            placeholder='Type to add a note...'
+            placeholder='type to add a note...'
             value={input.text}
             onChange={handleChange}
         >

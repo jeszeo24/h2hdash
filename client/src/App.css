@@ -1,7 +1,10 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.Background {
-  
+.App {
+  text-align: center;
+  background-color: #C0EBE9;
+  display: inline-block;
 }
+

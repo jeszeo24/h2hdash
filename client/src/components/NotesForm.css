@@ -2,7 +2,11 @@
     background-color: #67d7cc;
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 190px;
+    height: 150px;
+    margin-top: 1.2em;
+    margin-left: 1.5em;
+    border-radius: 15px;
 }
 
 textarea {
@@ -12,7 +16,8 @@ textarea {
     resize: none;
     background-color: #67d7cc;
     padding: 1rem;
-    min-height: 170px;
+    min-height: 150px;
+    font-size: small;
     /* display: flex;
     flex-direction: column;
     justify-content: space-between; */
@@ -27,13 +32,17 @@ textarea:focus {
 }
 
 .Notebutton {
+    position: relative;
+    top: -16px;
     background-color: #e1e1e1;
     border: none;
     border-radius: 15px;
     padding: 5px 10px 5px 10px;
+    height: 3vh;
+    font-size: 1.5vh;
 }
 
 .Notebutton:hover {
-    background-color: #ededed;
+    background-color: #C1A5E3;
     cursor: pointer;
 }

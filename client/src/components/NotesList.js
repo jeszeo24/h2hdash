@@ -18,7 +18,8 @@ function dragOver(event) {
 }
 
   return (
-    <div className="NotesList" onDragOver={dragOver}>
+    <div className="NotesList container lh-sm" onDragOver={dragOver}>
+      {/* <div className="row"> */}
       <ul>
         {props.searched.map(n => (
           <li key={n.id}>
@@ -41,8 +42,8 @@ function dragOver(event) {
           </li>
         ))}
       </ul>
-
     </div>
+    // </div>
   );
 }
 
