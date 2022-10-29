@@ -3,17 +3,13 @@
 import React, {useState, useEffect, useRef} from "react";
 import CarouselItem from "../components/CarouselItem";
 import CarouselControls from "../components/CarouselControls";
+import CarouselIndicators from "../components/CarouselIndicators";
 import "./PhotoCarouselView.css";
 
-function PhotoCarouselView() {
+function PhotoCarouselView(props) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideInterval = useRef();
-
-    const slides = [
-         "https://picsum.photos/id/251/600/267",
-         "https://picsum.photos/id/256/600/267",
-         "https://picsum.photos/id/264/600/267",
-    ]
+  let slides = props.slides;
 
     // If index of current slide is more than 0, -1 from index to get previous if not show the last slide
     function prev() {
@@ -29,15 +25,22 @@ function PhotoCarouselView() {
         setCurrentSlide(index);
     }
 
+    function switchIndex(index) {
+        startSlideTimer();
+        setCurrentSlide(index);
+    }
+
     function startSlideTimer() {
-        stopSlideTimer();
-        slideInterval.current = setInterval(() => {
-            setCurrentSlide(currentSlide => currentSlide < slides.length - 1 ? currentSlide + 1 : 0)
-        }, 3000)
+        if (props.autoPlay) {
+            stopSlideTimer();
+            slideInterval.current = setInterval(() => {
+                setCurrentSlide(currentSlide => currentSlide < slides.length - 1 ? currentSlide + 1 : 0)
+            }, props.interval)
+        }
     }
 
     function stopSlideTimer() {
-        if(slideInterval.current) {
+        if(props.autoPlay && slideInterval.current) {
             // clearInterval() method cancels a timed, repeating action which was previously established by a call to setInterval()
             clearInterval(slideInterval.current)
         }
@@ -61,7 +64,7 @@ function PhotoCarouselView() {
 
   return (
     <div className="PhotoCarousel">
-       <div className="carousel">
+       <div className="carousel" style={{ maxWidth : props.width }}>
            <div 
            className="carousel-inner"
            style={{ transform: `translateX(${-currentSlide * 100}%)`}}>
@@ -74,12 +77,17 @@ function PhotoCarouselView() {
                          />
                    ))}
            </div>
+
+           {props.indicators && <CarouselIndicators
+           slides={slides}
+           currentIndex={currentSlide}
+           switchIndexCb = {switchIndex}
+           />}
            {/* Pass prev and next callback functions to child CarouselControls */}
-           <CarouselControls 
+           {props.controls && <CarouselControls 
            prevCb={prev} 
            nextCb={next}
-           
-           />  
+           />}  
         </div>  
     </div>
   );

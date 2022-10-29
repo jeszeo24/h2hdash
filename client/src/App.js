@@ -19,6 +19,11 @@ export default function App() {
   const [notes, setNotes] = useState([]);
   const [time, setTime] = useState("");
   const [files, setFiles] = useState([]);
+  const slides = [
+    "https://picsum.photos/id/251/600/267",
+    "https://picsum.photos/id/256/600/267",
+    "https://picsum.photos/id/264/600/267",
+]
 
   function getCities(city) {
     let newObj = { 
@@ -244,7 +249,13 @@ async function uploadFile(formData) {
 
         <LuckGame />
 
-        <PhotoCarouselView />
+        <PhotoCarouselView 
+        slides={slides}
+        interval={5000}
+        indicators
+        controls
+        autoPlay={true}
+        width="600px"/>
 
         <h1>Let's Upload Files!</h1>
 

@@ -1,0 +1,22 @@
+.carousel-indicators {
+    position: absolute;
+    transform: translateX(-50%); /* repositions an element horizontally on the 2D plane */
+    left: 50%; /* at absolute position, this places the indicator in the center */
+    bottom: 4.5em; /* the larger the number, the higher up it is */
+    z-index: 2;
+}
+
+.carousel-indicator-item {
+    width: 15px;
+    height: 15px;
+    border: none;
+    background: #fff;
+    opacity: 0.5;
+    margin: 0.2em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.active {
+    opacity: 1;
+}
