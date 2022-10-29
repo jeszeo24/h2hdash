@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdSearch } from "react-icons/md"
+import { MdSearch } from "react-icons/md";
 import "./Search.css";
 
 function Search(props) {

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { MdSearch } from "react-icons/md";
 import "./CityField.css";
+
 
 function CityField(props) {
     const [city, setCity] = useState("");
@@ -15,15 +17,16 @@ function CityField(props) {
     }
 
   return (
-    <div className="CityField">
+    <div className="CityField container-fluid">
      <form onSubmit={handleSubmit}>
        <label className="city">
-         Input city:
+       <MdSearch className="search-icons" size="1em" />
          <input
          type="text"
          name="city"
          value={city}
-         onChange={handleChange} 
+         onChange={handleChange}
+         placeholder="input city of choice here to view time and weather..." 
          />
        </label>
        <button type="submit">Submit</button>

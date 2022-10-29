@@ -17,6 +17,7 @@
     background-color: rgb(233, 233, 233);
 }
 
+/* // Removes the blue/black box that appears upon clicking field */
 .search input:focus {
     outline: none;
 }

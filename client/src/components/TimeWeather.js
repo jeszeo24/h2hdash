@@ -103,7 +103,6 @@ function newTime(){
               {/* NOTE: Having the list in an if statement because prob due to asynchronous nature, may not load */}
               {c ? <li key={c.id} className={`id${c.id}`}>
                   <h2>{c.city}</h2>
-                  <h3>{c.timezone}</h3>
                   <div className="icon">
                   <img src={`http://openweathermap.org/img/wn/${c.icon}@2x.png`} />
                   </div>
