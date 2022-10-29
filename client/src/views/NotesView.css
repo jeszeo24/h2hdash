@@ -7,4 +7,16 @@
     border: solid rgb(250, 250, 250);
     border-radius: 1%;
     height: 420px;
+    max-height: 420px; /* defines the max height of an element */
+    overflow: auto; /*how container handles the overflow content */
+  }
+
+  .NotesView .formlist {
+      display: inline-flex;
+      flex-wrap: wrap;
+  }
+
+  /* The below hides scrollbar but keeps functionality */
+.NotesView::-webkit-scrollbar {
+    display: none;
   }

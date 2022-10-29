@@ -34,9 +34,10 @@ textarea:focus {
 .Notebutton {
     position: relative;
     top: -16px;
-    background-color: #e1e1e1;
+    background-color: rgb(233, 233, 233);
     border: none;
     border-radius: 15px;
+    border-color: azure;
     padding: 5px 10px 5px 10px;
     height: 3vh;
     font-size: 1.5vh;

@@ -9,12 +9,14 @@ import "./PhotoCarouselView.css";
 function TimeWeatherView(props) {
 
     return (
-        <div className="TimeWeatherView container-fluid">
+        <div className="TimeWeatherView container">
             <CityField 
             getCitiesCb2={props.getCitiesCb} 
             /> 
             
+            {props.citties ?
             {/* second parameter in map function is the index, passing index so that a unique id can be sent to TimeWeather to access each individual compile array object */}
+            (
             <table className="cities">
             {props.cities.map((c, index) => (
                 <td key={c.id}>
@@ -28,10 +30,16 @@ function TimeWeatherView(props) {
                  </td>
             ))}
             </table>
+            ) : (
+                <div className="lucky">
+                <img src="../assets/theview.jpg"></img>
+                </div>
+            )}
 
-            <Time
+            {/* <Time
                  compile={props.compile} 
-                 />
+                 /> */}
+                 
             {/* <TimeWeather 
             cities2={props.cities}
             /> */}

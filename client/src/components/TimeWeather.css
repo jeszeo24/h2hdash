@@ -2,16 +2,30 @@
   box-sizing: border-box;
 }
 
-
-ul .compile {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  padding-left: none;
-  
+.TimeWeather {
+  /* margin: none;
+  padding: none; */
+  width: 150px;
+  /* max height to set the maximum height of each weather box */
+  height: 350px;
 }
 
 .compile {
   font-size:large;
-  height: 300px;
+  height: 350px; /* height of each timeweather box */
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+/* .compile td {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding-left: none;
+  width: 150px;
+  justify-content: center;
+} */
+
+.compile h2 {
+  margin-top: 10px; /* pushes down header, text etc */
 }
 
 .compile .id0 {

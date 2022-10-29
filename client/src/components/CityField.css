@@ -30,4 +30,12 @@
 
 .CityField button {
     border-radius: 10px;
+    border-color: azure;
+    width: 50px;
+}
+
+
+.CityField button:hover {
+    background-color: #C1A5E3;
+    cursor: pointer;
 }

@@ -30,7 +30,7 @@ function NotesView(props) {
           <div className="row">
             <Search 
             searchCb={input => search(input)} />
-          
+          <div className="formlist">
             <div className="NotesForm col-sm-4">
             <NotesForm addNoteCb2={props.addNoteCb}/> 
             </div>
@@ -42,6 +42,7 @@ function NotesView(props) {
             // these are the notes that want to display in NotesList
             // not calling the function, sending searched
             />
+            </div>
             </div>
             </div>
         </div>

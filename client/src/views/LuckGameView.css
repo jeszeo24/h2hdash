@@ -10,13 +10,13 @@
   }
 
 .LuckGame .lucky img {
-    height: 250px;
+    height: 270px;
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
 .LuckGame .country {
-    height: 300px;
+    height: 270px;
     background-image: url("https://media1.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif?cid=ecf05e47a9s6x37x2q2wlsxbq0y4su6n0dhx1wegqdpi0v9b&rid=giphy.gif&ct=g");
     background-repeat: no-repeat;
     background-position: center;
@@ -24,15 +24,38 @@
     margin-bottom: 20px;
     position: relative;
     text-align: center;
+    z-index: 1;
 }
 
 .LuckGame .country .countrytext {
     height: 200px;
     white-space: pre-wrap;
-    font-size: 8vh;
+    font-size: 7vh;
     color: white;
     text-align: center;
-    padding: 80px 10px;
+    padding: 80px;
     vertical-align: middle;
     line-height: 8vh;
+    z-index: 2;
+    max-width: 450px;
+    margin-left: 75px;
+    max-height: 300px;
+    overflow: auto;
+}
+
+/* The below hides scrollbar but keeps functionality */
+.LuckGame .country .countrytext::-webkit-scrollbar {
+    display: none;
+  }
+
+.LuckGame button {
+    border-radius: 10px;
+    border-color: azure;
+    width: 200px;
+    font-size: small;
+}
+
+.LuckGame button:hover {
+    background-color: #C1A5E3;
+    cursor: pointer;
 }

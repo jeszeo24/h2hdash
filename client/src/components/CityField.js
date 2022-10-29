@@ -29,7 +29,7 @@ function CityField(props) {
          placeholder="input city of choice here to view time and weather..." 
          />
        </label>
-       <button type="submit">Submit</button>
+       <button type="submit">Click</button>
      </form>
 
      {/* <select onChange={handleChange}>

@@ -97,11 +97,11 @@ function newTime(){
 
   return (
     <div className="TimeWeather">
-               <ul className="compile">
+               <table className="compile">
    
               {/* // in order to have unique classes for each list, created className with id in front because CSS does not recognize numbers as classname */}
               {/* NOTE: Having the list in an if statement because prob due to asynchronous nature, may not load */}
-              {c ? <li key={c.id} className={`id${c.id}`}>
+              {c ? <td key={c.id} className={`id${c.id}`}>
                   <h2>{c.city}</h2>
                   <div className="icon">
                   <img src={`http://openweathermap.org/img/wn/${c.icon}@2x.png`} />
@@ -123,8 +123,8 @@ function newTime(){
                   
                   </div>
                   
-              </li> : null}
-      </ul>
+              </td> : null}
+      </table>
      
     </div>
   )

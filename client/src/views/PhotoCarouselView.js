@@ -46,7 +46,7 @@ function PhotoCarouselView(props) {
         }
     }
 
-    // Every tine the page rerendersm 
+    // Every tine the page rerenders
     useEffect(() => {
         startSlideTimer();
           return () => stopSlideTimer() // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
@@ -68,6 +68,7 @@ function PhotoCarouselView(props) {
        <div className="carousel" style={{ maxWidth : props.width }}>
            <div 
            className="carousel-inner"
+           // the below "transform: translateX by -100%" moves each slide completely to the left
            style={{ transform: `translateX(${-currentSlide * 100}%)`}}>
                    {slides.map((slide, index) => (
                          <CarouselItem 

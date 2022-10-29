@@ -8,12 +8,24 @@
   border-radius: 1%;
   height: 420px;
   margin-bottom: 8px;
+  flex-wrap: wrap;
 }
 
 
 .cities {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  overflow: hidden;
-  font-size: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  /* NOTES: fr stands for fraction, proportion of available space. https://medium.com/@r_tripti/css-grids-all-about-fr-units-36b7b5fea661*/
+  max-width: 800px;
+  max-height: 500px;
+  overflow: scroll;
+} 
+
+.cities td {
+  border-spacing: none;
+}
+
+/* The below hides scrollbar but keeps functionality */
+.cities::-webkit-scrollbar {
+  display: none;
 }
