@@ -29,16 +29,17 @@
 
 .LuckGame .country .countrytext {
     height: 200px;
-    white-space: pre-wrap;
-    font-size: 7vh;
+    /* white-space: pre-wrap; */
+    font-size: 6vh;
     color: white;
     text-align: center;
     padding: 80px;
     vertical-align: middle;
-    line-height: 8vh;
+    line-height: 6vh;
     z-index: 2;
-    max-width: 450px;
-    margin-left: 75px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     max-height: 300px;
     overflow: auto;
 }

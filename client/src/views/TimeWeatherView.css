@@ -29,3 +29,7 @@
 .cities::-webkit-scrollbar {
   display: none;
 }
+
+.theview {
+  height: 100px;
+}

@@ -50,7 +50,7 @@ function reset() {
 // QUESTION 2: How do I toggle between?
 
   return (
-      <div className="LuckGameView">
+      <div className="LuckGameView container">
     <div className="LuckGame">
             { pic ? 
             (

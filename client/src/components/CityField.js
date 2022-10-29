@@ -5,6 +5,7 @@ import "./CityField.css";
 
 function CityField(props) {
     const [city, setCity] = useState("");
+    const [pic, setPic] = useState(false);
 
     function handleChange(e) {
         setCity(e.target.value);
@@ -14,6 +15,9 @@ function CityField(props) {
       e.preventDefault();
       props.getCitiesCb2(city);
       setCity("");
+
+      setPic(true);
+      props.pic(pic);
     }
 
   return (
