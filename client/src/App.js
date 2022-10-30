@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import TimeWeatherView from "./views/TimeWeatherView";
 import NotesView from "./views/NotesView";
-import LuckGame from "./views/LuckGame";
+import LuckGameView from "./views/LuckGameView";
 // import UploadFile from "./components/UploadFile_Germinal";
 import Clock from "react-live-clock";
 import UploadForm from './components/UploadForm';
@@ -263,7 +263,7 @@ async function uploadFile(formData) {
         </div>
 
         <div className="gridsection">
-        <LuckGame />
+        <LuckGameView />
         </div>
 
         {/* <h1>Let's Upload Files!</h1>

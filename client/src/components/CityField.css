@@ -1,0 +1,41 @@
+.CityField  {
+    display: flex;
+    align-items: center;
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    margin-left: 1.5em;
+    width: 95%;
+    height: 3.5vh;
+    font-size: 1.5vh;
+}
+
+.CityField form {
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+
+.CityField input {
+    border: none;
+    background-color: rgb(233, 233, 233);
+    width: 300px;
+}
+
+/* // Removes the blue/black box that appears upon clicking field */
+.CityField input:focus {
+    outline: none;
+}
+
+.CityField button {
+    border-radius: 10px;
+    border-color: azure;
+    width: 50px;
+}
+
+
+.CityField button:hover {
+    background-color: #C1A5E3;
+    cursor: pointer;
+}

@@ -2,9 +2,9 @@ import React, {useState} from "react";
 import countries from "i18n-iso-countries";
 // Country list downloaded via https://www.npmjs.com/package/i18n-iso-countries
 // Additional reference: https://javascript.plainenglish.io/create-a-country-select-component-with-react-2021-a259bd0350d5
-import "./LuckGame.css";
+import "./LuckGameView.css";
 
-function LuckGame() {
+function LuckGameView() {
     const [country, setCountry] = useState("");
     const [pic, setPic] = useState(false);
 
@@ -50,8 +50,7 @@ function reset() {
 // QUESTION 2: How do I toggle between?
 
   return (
-    <div className="LuckGame">
-        <div className="luckimage">
+    <div className="LuckGameView">
             { pic ? 
             (
                 <div onClick={reset} className="country">
@@ -65,9 +64,8 @@ function reset() {
                 </div>
             )}
             <button onClick={handleClick}>Where to next?</button>
-            </div>
     </div>
   );
 }
 
-export default LuckGame;
+export default LuckGameView;

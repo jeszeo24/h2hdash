@@ -2,3 +2,8 @@
     max-height: 450px;
     overflow: scroll;
 }
+
+/* The below hides scrollbar but keeps functionality */
+.NotesView::-webkit-scrollbar {
+    display: none;
+}

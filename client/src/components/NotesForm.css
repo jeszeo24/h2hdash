@@ -2,7 +2,11 @@
     background-color: #67d7cc;
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 190px;
+    height: 150px;
+    margin-top: 1.2em;
+    margin-left: 1.5em;
+    border-radius: 15px;
 }
 
 textarea {
@@ -27,13 +31,18 @@ textarea:focus {
 }
 
 .Notebutton {
-    background-color: #e1e1e1;
+    position: relative;
+    top: -16px;
+    background-color: rgb(233, 233, 233);
     border: none;
     border-radius: 15px;
+    border-color: azure;
     padding: 5px 10px 5px 10px;
+    height: 3vh;
+    font-size: 1.5vh;
 }
 
 .Notebutton:hover {
-    background-color: #ededed;
+    background-color: #C1A5E3;
     cursor: pointer;
 }
