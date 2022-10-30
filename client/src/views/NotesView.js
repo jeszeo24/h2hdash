@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import NotesForm from "../components/NotesForm";
 import NotesList from "../components/NotesList";
 import Search from "../components/Search";
+import "./NotesView.css";
 
 function NotesView(props) {
     const [searched, setSearched] = useState([]);
@@ -25,20 +26,22 @@ function NotesView(props) {
 //   }
     
     return (
-        <div>
+        <div className="NotesView">
             <Search 
             searchCb={input => search(input)} />
             {/* resetAllCb={reset}/> */}
 
-            <NotesForm addNoteCb2={props.addNoteCb}/> 
-            
+          <div className="noteformlist">
+            {/* <NotesForm addNoteCb2={props.addNoteCb}/>  */}
+          
             <NotesList notes2={props.notes}
             deleteCb2={props.deleteCb}
             searched={searched}
+            addNoteCb2={props.addNoteCb}
             // these are the notes that want to display in NotesList
             // not calling the function, sending searched
             />
-            
+            </div>
         </div>
         
     )

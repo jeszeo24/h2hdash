@@ -1,7 +1,15 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .Background {
+  
+}
+
+.gridsection {
+  background-color: aqua;
+  border: solid 2px white;
   
 }

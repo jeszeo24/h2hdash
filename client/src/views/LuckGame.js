@@ -51,6 +51,7 @@ function reset() {
 
   return (
     <div className="LuckGame">
+        <div className="luckimage">
             { pic ? 
             (
                 <div onClick={reset} className="country">
@@ -64,6 +65,7 @@ function reset() {
                 </div>
             )}
             <button onClick={handleClick}>Where to next?</button>
+            </div>
     </div>
   );
 }

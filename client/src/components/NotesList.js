@@ -1,5 +1,6 @@
 import React from "react";
 import "./NotesList.css";
+import NotesForm from "./NotesForm";
 import { TbTrash } from "react-icons/tb"
 // NOTE: From https://react-icons.github.io/react-icons/
 // Sticky Notes Drag and Drop: https://www.youtube.com/watch?v=KcXsX1XXa2s&ab_channel=codebubb
@@ -20,6 +21,7 @@ function dragOver(event) {
   return (
     <div className="NotesList" onDragOver={dragOver}>
       <ul>
+        <NotesForm addNoteCb2={props.addNoteCb2}/>
         {props.searched.map(n => (
           <li key={n.id}>
         

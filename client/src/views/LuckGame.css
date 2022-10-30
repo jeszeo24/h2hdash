@@ -1,5 +1,10 @@
+.LuckGame {
+    max-height: 330px;
+    overflow: scroll;
+}
+
 .LuckGame .lucky img {
-    height: 400px;
+    height: 200px;
     margin-bottom: none;
 }
 

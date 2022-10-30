@@ -60,7 +60,9 @@ export default function App() {
       temperature: myWeather.main.temp,
       icon: myWeather.weather[0].icon,
       time: myTime.datetime,
-      timezone: myTime.timezone_location
+      timezone: myTime.timezone_location,
+      timeabb: myTime.timezone_abbreviation,
+      offset: myTime.gmt_offset
     }
   
     setCompile(compile => [...compile, newObj]);
@@ -230,7 +232,7 @@ async function uploadFile(formData) {
 
   return (
     <div className="App">
-
+      <div className="gridsection">
        {/* Need to check if weather and time exists/loaded, then only display - if not, will receive error message "Cannot read properties of null as defined in useState*/}
        <TimeWeatherView
        // For TimeWeather component
@@ -240,15 +242,17 @@ async function uploadFile(formData) {
        // For CityField component
        getCitiesCb={(city) => getCities(city)} 
        />
+      </div>
 
+      <div className="gridsection">
        <NotesView 
        addNoteCb={addNote} // send NotesView addNoteCb
        notes={notes}
        deleteCb={deleteNote}
         />
+        </div>
 
-        <LuckGame />
-
+        <div className="gridsection">
         <PhotoCarouselView 
         slides={slides}
         interval={5000}
@@ -256,14 +260,19 @@ async function uploadFile(formData) {
         controls
         autoPlay={true}
         width="600px"/>
+        </div>
 
-        <h1>Let's Upload Files!</h1>
+        <div className="gridsection">
+        <LuckGame />
+        </div>
+
+        {/* <h1>Let's Upload Files!</h1>
 
             <h2>Upload New File</h2>
             <UploadForm uploadCb={fd => uploadFile(fd)} />
 
             <h2>All Files</h2>
-            <FileList files={files} />
+            <FileList files={files} /> */}
         
         {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} /> */}
     </div>
