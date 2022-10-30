@@ -11,3 +11,9 @@
   background-color: #BCCEF8 ; /* #BCCEF8 #C0EBE9 */
   margin: 5px 5px 5px 5px;
 }
+
+.gridsection .timeweather {
+  height: 420px;
+}
+
+/* The above sets the timeweather div and hence the stickynotes div at a set height */

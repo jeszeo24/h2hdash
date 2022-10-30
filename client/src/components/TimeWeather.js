@@ -9,23 +9,25 @@ function TimeWeather(props) {
   // NOTE: props.compile is an object received from TimeWeatherView, props.index is a unique number to each object
   let c = props.compile[props.index];
   let t = props.time[props.index]; // NOTE: for react-live-clock if it still works?
-  const [newtime, setNewTime] = useState("");
-  const [oldtime, setOldTime] = useState("");
-  const [reftime, setRefTime] = useState("");
+  // const [newtime, setNewTime] = useState("");
+  // const [oldtime, setOldTime] = useState("");
+  // const [reftime, setRefTime] = useState("");
   const [dateState, setDateState] = useState(new Date());
   const [dateTime, setDateTime] = useState(new Date());
-  const time = useRef(oldtime); // NOTE: Can I use useRef to maintain value of oldtime?
+  // const time = useRef(oldtime); // NOTE: Can I use useRef to maintain value of oldtime?
 
   useEffect(() => {
     const offset = c?.offset;
 
     if (Number.isInteger(offset)) {
-      const newDate = new Date(new Date().getTime() + offset * 3600 * 1000)
-        .toUTCString()
+      const newDate = new Date(new Date().getTime() + offset * 3600 * 1000) //getTime() calculates number of years since Jan 1, 1970?
+        .toUTCString() //converts a date to a string, interpreting in UTC time zone
         .replace(/ GMT$/, "");
       setDateTime(newDate);
+      console.log(dateTime)
 
       setInterval(() => setDateState(dateTime, 30000));
+      console.log(dateState);
     }
   }, [c?.offset]);
 
@@ -33,15 +35,15 @@ function TimeWeather(props) {
   //   setInterval(() => setDateState(dateTime, 30000));
   // }, []);
 
-  function refreshTime() {
-    if (c) {
-      console.log(c.time);
-      let updatedT = c.time.slice(11); // no longer date object
-      setOldTime(updatedT); // set time?
-      console.log("this is the time from compile", updatedT);
-    }
-    newTime();
-  }
+  // function refreshTime() {
+  //   if (c) {
+  //     console.log(c.time);
+  //     let updatedT = c.time.slice(11); // no longer date object
+  //     setOldTime(updatedT); // set time?
+  //     console.log("this is the time from compile", updatedT);
+  //   }
+  //   newTime();
+  // }
 
   // NOTE: useEffect to call refreshTime when props is changed/passed?
   // useEffect(() => {
@@ -49,10 +51,10 @@ function TimeWeather(props) {
   // }, [c]);
 
   // NOTE: Unable to continue increasing time because state remains the same
-  function newTime() {
-    console.log(oldtime);
-    let hour = oldtime.slice(0, 2);
-    let minute = oldtime.slice(3, 5);
+  // function newTime() {
+  //   console.log(oldtime);
+  //   let hour = oldtime.slice(0, 2);
+  //   let minute = oldtime.slice(3, 5);
 
     // QUESTION: How do I add 0 to the front of a single digit?
     // if (minute < 10) {
@@ -75,16 +77,16 @@ function TimeWeather(props) {
     //  console.log("hour", hour);
     //  console.log("min", minute);
 
-    setNewTime([hour, ":", minute]);
+    // setNewTime([hour, ":", minute]);
 
     //NOTE: Below NOT working because oldtime state is always updated by the time passed by parent prop
     //So the minute only changes in the first instance
-    setOldTime(`${hour}:${minute}`);
-    console.log("this is the new time", newtime);
-    return newTime;
-  }
+  //   setOldTime(`${hour}:${minute}`);
+  //   console.log("this is the new time", newtime);
+  //   return newTime;
+  // }
 
-  const MINUTE_MS = 60000;
+  // const MINUTE_MS = 60000;
 
   // NOTE: TEMPORARILY COMMENTED OUT/UNCOMMENT TO SEE REFRESH EVERY MINUTE
   // useEffect(() => {
@@ -124,7 +126,7 @@ function TimeWeather(props) {
               {dateState.toString()}
 
               <div>
-                New time{newtime}
+                {/* New time{newtime} */}
                 {/* NOTE: Breaks everything, invalid hook call? */}
                 {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={c.timezone_location}/> */}
               </div>

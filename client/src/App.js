@@ -234,6 +234,7 @@ async function uploadFile(formData) {
     <div className="App">
       <div className="gridsection">
        {/* Need to check if weather and time exists/loaded, then only display - if not, will receive error message "Cannot read properties of null as defined in useState*/}
+       <div className="timeweather">
        <TimeWeatherView
        // For TimeWeather component
        cities={cities} 
@@ -242,6 +243,7 @@ async function uploadFile(formData) {
        // For CityField component
        getCitiesCb={(city) => getCities(city)} 
        />
+       </div>
       </div>
 
       <div className="gridsection">
