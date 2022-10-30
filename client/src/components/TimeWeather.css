@@ -2,14 +2,27 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: "Open Sans";
-  src: url("https://fonts.googleapis.com/css?family=Open+Sans");
- }
+.TimeWeather {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 .compile {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: medium;
+  height: 350px; /* height of each timeweather box */
+  margin-top: 10px;
+}
 
+/* .compile td {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding-left: none;
+  width: 150px;
+  justify-content: center;
+} */
+
+.compile h2 {
+  margin-top: 10px; 
+  /* pushes down header, text etc */
 }
 
 .compile .id0 {
@@ -21,5 +34,13 @@
 }
 
 .compile .id2 {
-  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(20,9,121,1) 11%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+.compile .id3 {
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
+.compile .id4 {
+  background: linear-gradient(#e66465, #9198e5);
 }

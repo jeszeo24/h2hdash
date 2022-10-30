@@ -3,21 +3,20 @@ import CityField from "../components/CityField";
 import TimeWeather from "../components/TimeWeather";
 import Time from "../components/Time";
 import "./TimeWeatherView.css";
-import "./PhotoCarouselView.css";
 
 // map through the cities and render TimeWeather component for each city
 function TimeWeatherView(props) {
 
     return (
-        <div>
+        <div className="TimeWeatherView">
             <CityField 
             getCitiesCb2={props.getCitiesCb} 
             /> 
             
             {/* second parameter in map function is the index, passing index so that a unique id can be sent to TimeWeather to access each individual compile array object */}
-            <ul className="cities">
+            <table className="cities">
             {props.cities.map((c, index) => (
-                <li key={c.id}>
+                <td key={c.id}>
                 <TimeWeather 
                 compile={props.compile}
                 cities={props.cities}
@@ -25,9 +24,9 @@ function TimeWeatherView(props) {
                 time={props.time}
                  />
 
-                 </li>
+                 </td>
             ))}
-            </ul>
+            </table>
 
             <Time
                  compile={props.compile} 

@@ -16,7 +16,7 @@ textarea {
     resize: none;
     background-color: #67d7cc;
     padding: 1rem;
-    min-height: 170px;
+    min-height: 150px;
     /* display: flex;
     flex-direction: column;
     justify-content: space-between; */

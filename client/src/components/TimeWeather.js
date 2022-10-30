@@ -104,11 +104,11 @@ function TimeWeather(props) {
 
   return (
     <div className="TimeWeather">
-      <ul className="compile">
+      <table className="compile">
         {/* // in order to have unique classes for each list, created className with id in front because CSS does not recognize numbers as classname */}
         {/* NOTE: Having the list in an if statement because prob due to asynchronous nature, may not load */}
         {c ? (
-          <li key={c.id} className={`id${c.id}`}>
+          <td key={c.id} className={`id${c.id}`}>
             <h2>{c.city}</h2>
             <h3>{c.timezone}</h3>
             <div className="icon">
@@ -129,9 +129,9 @@ function TimeWeather(props) {
                 {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={c.timezone_location}/> */}
               </div>
             </div>
-          </li>
+          </td>
         ) : null}
-      </ul>
+      </table>
     </div>
   );
 }

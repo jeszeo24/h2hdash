@@ -260,6 +260,7 @@ async function uploadFile(formData) {
         controls
         autoPlay={true}
         width="600px"/>
+  
         </div>
 
         <div className="gridsection">
