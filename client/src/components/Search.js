@@ -23,10 +23,10 @@ function Search(props) {
         <div className="search">
             <form >
             {/*<form onSubmit={handleSubmit}> */}
-            <MdSearch className="search-icons" size="1em" />
+            <MdSearch className="search-icons" size="2em" />
             <input 
             type="text" 
-            placeholder="type to search..."
+            placeholder="   type to search..."
             value={input}
             onChange={handleChange}
             /> 

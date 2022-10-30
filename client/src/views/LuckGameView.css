@@ -1,6 +1,10 @@
-.LuckGame {
-    max-height: 330px;
+.LuckGameView {
+    max-height: 350px;
     overflow: scroll;
+}
+
+.LuckGameView::-webkit-scrollbar {
+    display: none;
 }
 
 .LuckGameView .lucky img {

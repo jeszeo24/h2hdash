@@ -18,11 +18,11 @@ function CityField(props) {
   return (
     <div className="CityField">
      <form onSubmit={handleSubmit}>
-     <MdSearch className="search-icons" size="1em" />
+     <MdSearch className="search-icons" size="2em" />
          <input
          type="text"
          name="city"
-         placeholder="type in city to display weather and time..."
+         placeholder="   type in city to display weather and time..."
          value={city}
          onChange={handleChange} 
          />

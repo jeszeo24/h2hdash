@@ -63,7 +63,7 @@ function PhotoCarouselView(props) {
 //   }, [])
 
   return (
-    <div className="PhotoCarousel">
+    <div className="PhotoCarouselView">
        <div className="carousel" style={{ maxWidth : props.width }}>
            <div 
            className="carousel-inner"
