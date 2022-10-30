@@ -1,9 +1,15 @@
 .CarouselItem {
-    display: inline-block; 
-    /* causes the items to be next to each other */
-    width: 100%; 
+  /* display: inline-block;  */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: green;
+  /* causes the items to be next to each other */
+  width: 100%;
+  /* margin-bottom: 10px; */
 }
 
-.CarouselItem img {
+/* .CarouselItem img {
     width: 100%;
-}
+} */

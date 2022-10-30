@@ -253,6 +253,7 @@ async function uploadFile(formData) {
 
         <div className="row">
         <div className="col-sm-6">
+          <div className="pc-container">
         <PhotoCarouselView 
         slides={slides}
         interval={5000}
@@ -268,7 +269,7 @@ async function uploadFile(formData) {
 
             <h2>All Files</h2>
             <FileList files={files} /> */}
-        
+        </div>
         </div>
         <div className="col-sm-6">
         <LuckGameView />
