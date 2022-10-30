@@ -5,12 +5,12 @@ import NotesView from "./views/NotesView";
 import LuckGame from "./views/LuckGame";
 // import UploadFile from "./components/UploadFile_Germinal";
 import Clock from "react-live-clock";
-import UploadForm from './components/UploadForm';
-import FileList from './components/FileList';
-import PhotoCarouselView from "./views/PhotoCarouselView"
+import UploadForm from "./components/UploadForm";
+import FileList from "./components/FileList";
+import PhotoCarouselView from "./views/PhotoCarouselView";
 
 const API_KEY = "95e5614d843306eba8cca48f943be4f3";
-const TIME_API_KEY="b9320ebff64a4f69aa48f65296c8a20a";
+const TIME_API_KEY = "b9320ebff64a4f69aa48f65296c8a20a";
 
 export default function App() {
   const [cities, setCities] = useState([]);
@@ -23,48 +23,46 @@ export default function App() {
     "https://picsum.photos/id/251/600/267",
     "https://picsum.photos/id/256/600/267",
     "https://picsum.photos/id/264/600/267",
-]
+  ];
 
   function getCities(city) {
-    let newObj = { 
+    let newObj = {
       id: cities.length,
-      city: city, 
-    }
+      city: city,
+    };
 
-    setCities(cities => [...cities, newObj]);
+    setCities((cities) => [...cities, newObj]);
     getCompile(city);
   }
 
   async function getTime(city) {
-
     let myTime = await getTime(city);
-  
-      let newObj = { 
-        id: cities.length,
-        time: myTime.timezone_location
-      }
-    
-      setCompile(time => [...time, newObj]);
-   }
-    console.log(compile);
 
- async function getCompile(city) {
-
-  let myWeather = await getWeather(city);
-  let myTime = await getTime(city);
-
-    let newObj = { 
+    let newObj = {
       id: cities.length,
-      city: city, 
+      time: myTime.timezone_location,
+    };
+
+    setCompile((time) => [...time, newObj]);
+  }
+  console.log(compile);
+
+  async function getCompile(city) {
+    let myWeather = await getWeather(city);
+    let myTime = await getTime(city);
+
+    let newObj = {
+      id: cities.length,
+      city: city,
       weather: myWeather.weather[0].main,
       temperature: myWeather.main.temp,
       icon: myWeather.weather[0].icon,
       time: myTime.datetime,
-      timezone: myTime.timezone_location
-    }
-  
-    setCompile(compile => [...compile, newObj]);
- }
+      timezone: myTime.timezone_location,
+    };
+
+    setCompile((compile) => [...compile, newObj]);
+  }
   console.log(compile);
 
   async function getWeather(city) {
@@ -92,7 +90,6 @@ export default function App() {
   }
 
   async function getTime(city) {
-
     // build URL
     let url = `https://timezone.abstractapi.com/v1/current_time/?api_key=${TIME_API_KEY}&location=${city}`;
 
@@ -122,8 +119,8 @@ export default function App() {
 
   async function getNotes() {
     try {
-        // NOTE: second argument of options not necessary because DEFAULT method is GET
-        // only first argument of the link required
+      // NOTE: second argument of options not necessary because DEFAULT method is GET
+      // only first argument of the link required
       let response = await fetch("/notes");
       if (response.ok) {
         let note = await response.json(); // converts JSON to JavaScript for client/frontend
@@ -141,17 +138,17 @@ export default function App() {
   // POST (add) a new note
   async function addNote(input) {
     input = {
-      text: input
-    }
+      text: input,
+    };
     // NOTE: Insert date as below
-    input.date = new Date;
+    input.date = new Date();
     console.log(input);
 
     // Define fetch() options
     let options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(input) // send server JSON
+      body: JSON.stringify(input), // send server JSON
     };
 
     try {
@@ -174,7 +171,7 @@ export default function App() {
 
     // Define fetch() options
     let options = {
-      method: "DELETE"
+      method: "DELETE",
     };
 
     try {
@@ -192,81 +189,80 @@ export default function App() {
 
   useEffect(() => {
     getFiles();
-}, []);
+  }, []);
 
-async function getFiles() {
+  async function getFiles() {
     try {
-        let response = await fetch('/files');
-        if (response.ok) {
-            let data = await response.json();
-            setFiles(data);
-        } else {
-            console.log(`Server error: ${response.status}: ${response.statusText}`);
-        }
+      let response = await fetch("/files");
+      if (response.ok) {
+        let data = await response.json();
+        setFiles(data);
+      } else {
+        console.log(`Server error: ${response.status}: ${response.statusText}`);
+      }
     } catch (err) {
-        console.log(`Network error: ${err.message}`);
+      console.log(`Network error: ${err.message}`);
     }
-}
+  }
 
-async function uploadFile(formData) {
+  async function uploadFile(formData) {
     let options = {
-        method: 'POST',
-        body: formData
+      method: "POST",
+      body: formData,
     };
 
     try {
-        let response = await fetch('/files', options);
-        if (response.ok) {
-            // Server responds with updated array of files
-            let data = await response.json();
-            setFiles(data);
-        } else {
-            console.log(`Server error: ${response.status}: ${response.statusText}`);
-        }
+      let response = await fetch("/files", options);
+      if (response.ok) {
+        // Server responds with updated array of files
+        let data = await response.json();
+        setFiles(data);
+      } else {
+        console.log(`Server error: ${response.status}: ${response.statusText}`);
+      }
     } catch (err) {
-        console.log(`Network error: ${err.message}`);
+      console.log(`Network error: ${err.message}`);
     }
-}
+  }
 
   return (
     <div className="App">
+      {/* Need to check if weather and time exists/loaded, then only display - if not, will receive error message "Cannot read properties of null as defined in useState*/}
+      <TimeWeatherView
+        // For TimeWeather component
+        cities={cities}
+        compile={compile}
+        time={time}
+        // For CityField component
+        getCitiesCb={(city) => getCities(city)}
+      />
 
-       {/* Need to check if weather and time exists/loaded, then only display - if not, will receive error message "Cannot read properties of null as defined in useState*/}
-       <TimeWeatherView
-       // For TimeWeather component
-       cities={cities} 
-       compile={compile}
-       time={time}
-       // For CityField component
-       getCitiesCb={(city) => getCities(city)} 
-       />
+      <NotesView
+        addNoteCb={addNote} // send NotesView addNoteCb
+        notes={notes}
+        deleteCb={deleteNote}
+      />
 
-       <NotesView 
-       addNoteCb={addNote} // send NotesView addNoteCb
-       notes={notes}
-       deleteCb={deleteNote}
-        />
+      <LuckGame />
 
-        <LuckGame />
-
-        <PhotoCarouselView 
+      <PhotoCarouselView
         slides={slides}
         interval={5000}
         indicators
         controls
         autoPlay={true}
-        width="600px"/>
+        width="600px"
+      />
 
-        <h1>Let's Upload Files!</h1>
+      {/* <h1>Let's Upload Files!</h1>
 
             <h2>Upload New File</h2>
             <UploadForm uploadCb={fd => uploadFile(fd)} />
 
             <h2>All Files</h2>
-            <FileList files={files} />
-        
-        {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} /> */}
+            <FileList files={files} /> */}
+
+      {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} /> */}
     </div>
   );
 }
-
