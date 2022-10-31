@@ -20,7 +20,7 @@ There are additional node packages installed for purpose of both functionality a
 
 ### Database Prep
 
-- You will need a MySQL server, if you do not have one already please see https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/installing.html for installation information.
+- You will need a MySQL server, if you do not have one already please see `https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/installing.html` for installation information.
 - Access the MySQL interface in your terminal by running `mysql -u root -p`
 - Create a new database called h2hdash: `create database h2hdash`
 - Add a `.env` file to the project folder of this repository containing the MySQL authentication information for MySQL user. For example:
@@ -54,7 +54,7 @@ There are additional node packages installed for purpose of both functionality a
 
 ## Notes
 
-For the powerpoint presentation: `https://docs.google.com/presentation/d/1y_rAeFDhkDqVLgP6kRaHsAGazoeSCtTsTjWnncQQ7Zc/edit?usp=sharing`
+For the powerpoint presentation: `https://docs.google.com/presentation/d/1nVVAdGVKhm9vmepxa3nP_Z-Hfvq_Vk3utvQpXtnDnq4/edit?usp=sharing`
 
 Please find below a few additional notes:
 
