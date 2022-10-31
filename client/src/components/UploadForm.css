@@ -1,3 +1,31 @@
 .UploadForm {
     margin-bottom: 1em;
 }
+
+.UploadForm button {
+    border-radius: 10px;
+    border-color: azure;
+    width: 60px;
+    font-size: small;
+    margin-top: 5px;
+    height: 25px;
+}
+
+.UploadForm button:hover {
+    background-color: #C1A5E3;
+    cursor: pointer;
+}
+
+.UploadForm input {
+    border-radius: 10px;
+    border-color: azure;
+    width: 200px;
+    font-size: small;
+    margin-top: 5px;
+    height: 25px;
+}
+
+.UploadForm input:hover {
+    background-color: #C1A5E3;
+    cursor: pointer;
+}

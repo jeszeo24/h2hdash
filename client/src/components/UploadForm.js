@@ -42,7 +42,7 @@ function UploadForm(props) {
                         required
                     />
 
-
+                    {"  "}
                 <button type="submit">Submit</button>
             </form>
         </div>

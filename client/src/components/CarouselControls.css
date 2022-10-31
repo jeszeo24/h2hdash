@@ -23,6 +23,8 @@
     top: calc(50% - 25px);
     color: #f3f3f3;
     cursor: pointer;
+    font-size: small;
+    border-radius: 10px;
 }
 
 .carousel-control .right {
@@ -37,5 +39,7 @@
     top: calc(50% - 25px);
     color: #f3f3f3;
     cursor: pointer;
+    font-size: small;
+    border-radius: 10px;
 }
 

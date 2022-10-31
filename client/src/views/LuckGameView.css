@@ -8,15 +8,15 @@
 } */
 
 .LuckGameView .lucky img {
-    height: 270px;
-    margin-top: 50px;
+    height: 275px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .LuckGameView .country {
     margin-top: 50px;
     margin-bottom: 20px;
-    height: 270px;
+    height: 250px;
     background-image: url("https://media1.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif?cid=ecf05e47a9s6x37x2q2wlsxbq0y4su6n0dhx1wegqdpi0v9b&rid=giphy.gif&ct=g");
     background-repeat: no-repeat;
     background-position: center;
