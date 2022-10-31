@@ -1,14 +1,14 @@
-.LuckGameView {
+/* .LuckGameView {
     max-height: 350px;
     overflow: scroll;
-}
+} */
 
-.LuckGameView::-webkit-scrollbar {
+/* .LuckGameView::-webkit-scrollbar {
     display: none;
-}
+} */
 
 .LuckGameView .lucky img {
-    height: 230px;
+    height: 270px;
     margin-top: 50px;
     margin-bottom: 20px;
 }
@@ -16,7 +16,7 @@
 .LuckGameView .country {
     margin-top: 50px;
     margin-bottom: 20px;
-    height: 230px;
+    height: 270px;
     background-image: url("https://media1.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif?cid=ecf05e47a9s6x37x2q2wlsxbq0y4su6n0dhx1wegqdpi0v9b&rid=giphy.gif&ct=g");
     background-repeat: no-repeat;
     background-position: center;
@@ -30,10 +30,12 @@
     height: 300px;
     font-size: 100px;
     color: white;
-    position: center;
-    flex-wrap: wrap;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 6vh;
-    line-height: 8vh;
+    line-height: 6vh;
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -53,3 +55,4 @@
     background-color: #C1A5E3;
     cursor: pointer;
 }
+

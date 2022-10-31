@@ -20,7 +20,7 @@
 .CityField input {
     border: none;
     background-color: rgb(233, 233, 233);
-    width: 600px;
+    min-width: 400px;
 }
 
 /* // Removes the blue/black box that appears upon clicking field */
@@ -32,6 +32,8 @@
     border-radius: 10px;
     border-color: azure;
     width: 50px;
+    position: relative;
+    right: 0px;
 }
 
 

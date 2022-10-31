@@ -257,6 +257,7 @@ async function uploadFile(formData) {
             autoPlay={true}
             width="600px"
             height="300px"
+            uploadCb={fd => uploadFile(fd)}
             />
           
             <UploadForm uploadCb={fd => uploadFile(fd)} />

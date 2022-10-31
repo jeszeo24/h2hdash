@@ -26,7 +26,9 @@ function CityField(props) {
          value={city}
          onChange={handleChange} 
          />
-       <button type="submit">Submit</button>
+         <div>
+          <button type="submit">Submit</button>
+        </div>
      </form>
 
      {/* <select onChange={handleChange}>

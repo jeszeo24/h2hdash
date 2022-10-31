@@ -25,11 +25,12 @@ function NotesView(props) {
 //     console.log(props.notes);
 //   }
     
-    return (
-        <div className="NotesView">
-            <Search 
-            searchCb={input => search(input)} />
-            {/* resetAllCb={reset}/> */}
+  return (
+      <div className="NotesView">
+        <div className="container-fluid">
+          <Search 
+          searchCb={input => search(input)} />
+          {/* resetAllCb={reset}/> */}
 
           <div className="noteformlist">
             {/* <NotesForm addNoteCb2={props.addNoteCb}/>  */}
@@ -41,9 +42,10 @@ function NotesView(props) {
             // these are the notes that want to display in NotesList
             // not calling the function, sending searched
             />
-            </div>
-        </div>
-        
+          </div>
+         </div>
+      </div>
+
     )
 }
 

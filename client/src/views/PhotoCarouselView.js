@@ -5,6 +5,7 @@ import CarouselItem from "../components/CarouselItem";
 import CarouselControls from "../components/CarouselControls";
 import CarouselIndicators from "../components/CarouselIndicators";
 import "./PhotoCarouselView.css";
+import UploadForm from '../components/UploadForm';
 
 function PhotoCarouselView(props) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -63,33 +64,41 @@ function PhotoCarouselView(props) {
 //       return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
 //   }, [])
 
+
+
   return (
     <div className="PhotoCarouselView">
-       <div className="hcarousel" style={{ maxWidth : props.width}}>
-           <div 
-           className="hcarousel-inner"
-           style={{ transform: `translateX(${-currentSlide * 100}%)`, maxHeight : props.height }}>
-                   {files.map((file, index) => (
-                         <CarouselItem 
-                         file={file} 
-                         key={index}
-                         stopSlideCb={stopSlideTimer}
-                         startSlidecb={startSlideTimer}
-                         />
-                   ))}
-           </div>
+        <div className="container-fluid">
+            <div className="hcarousel" style={{ maxWidth : props.width}}>
+                <div 
+                className="hcarousel-inner"
+                style={{ transform: `translateX(${-currentSlide * 100}%)`, maxHeight : props.height }}>
+                        {files.map((file, index) => (
+                                <CarouselItem 
+                                file={file} 
+                                key={index}
+                                stopSlideCb={stopSlideTimer}
+                                startSlidecb={startSlideTimer}
+                                />
+                        ))}
+                </div>
 
-           {props.indicators && <CarouselIndicators
-           files={files}
-           currentIndex={currentSlide}
-           switchIndexCb = {switchIndex}
-           />}
-           {/* Pass prev and next callback functions to child CarouselControls */}
-           {props.controls && <CarouselControls 
-           prevCb={prev} 
-           nextCb={next}
-           />}  
-        </div>  
+                {props.indicators && <CarouselIndicators
+                files={files}
+                currentIndex={currentSlide}
+                switchIndexCb = {switchIndex}
+                />}
+                {/* Pass prev and next callback functions to child CarouselControls */}
+                {props.controls && <CarouselControls 
+                prevCb={prev} 
+                nextCb={next}
+                />}  
+            </div>  
+
+            <div>
+                <UploadForm />
+            </div>
+        </div>
     </div>
   );
 }
