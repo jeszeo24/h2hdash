@@ -1,7 +1,6 @@
 import React from "react";
-import CityField from "../components/CityField";
-import TimeWeather from "../components/TimeWeather";
-import Time from "../components/Time";
+import CityField from "../components/TimeWeather/CityField";
+import TimeWeather from "../components/TimeWeather/TimeWeather";
 import "./TimeWeatherView.css";
 
 // map through the cities and render TimeWeather component for each city

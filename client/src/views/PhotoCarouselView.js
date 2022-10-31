@@ -1,11 +1,11 @@
 // NOTE: Referenced from https://www.youtube.com/watch?v=gtZevjgUkcY&ab_channel=TutsPrime
 
 import React, {useState, useEffect, useRef} from "react";
-import CarouselItem from "../components/CarouselItem";
-import CarouselControls from "../components/CarouselControls";
-import CarouselIndicators from "../components/CarouselIndicators";
+import CarouselItem from "../components/Photocarousel/CarouselItem";
+import CarouselControls from "../components/Photocarousel/CarouselControls";
+import CarouselIndicators from "../components/Photocarousel/CarouselIndicators";
 import "./PhotoCarouselView.css";
-import UploadForm from '../components/UploadForm';
+import UploadForm from '../components/Photocarousel/UploadForm';
 
 function PhotoCarouselView(props) {
   const [currentSlide, setCurrentSlide] = useState(0);

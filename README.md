@@ -57,8 +57,25 @@ For the powerpoint presentation: `https://docs.google.com/presentation/d/1y_rAeF
 
 Please find below a few additional notes:
 
+1.) There are 4 main sections to the app:
+- TimeWeatherView in the views folder. For components, TimeWeather has it's own folder that consists of:
+  - CityField.js and CityField.css
+  - TimeWeather.js and TimeWeather.css
+- NotesView in the views folder. For components, NotesView consists of:
+  - NotesForm.js and NotesForm.css
+  - NotesList.js and NotesList.css
+  - Search.js and Search.css
+- PhotoCarouselView in the views folder. For components, Photocarousel has it's own folder that consists of:
+  - CarouselItem.js and CarouselItem.css
+  - CarouselControls.js and CarouselControls.css
+  - CarouselIndicators.js and CarouselIndicators.css
+    - Please note that while UploadForm.js and UploadForm.css are technically separate components in themselves, they have been included in the PhotoCarousel component as their main function is to allow photos to be uploaded
+- LuckGameView does not have any components, all relevant functions have been coded into LuckGameView.js and it's corresponding CSS LuckGameView.css
 
-4.) For TravelAdvisory.js (Travel Advisoriy page), the API searches based off ISO Country Alpha-2 codes `https://www.iban.com/country-codes`
-No API key is necessary.
+2.) Please note that all uploaded files/images are stored in the public/clientfiles folder.
+
+3.) There are a few items/folders that you can disregards
+- the Extras folder under the Components folder (these were components that were created but not utilised_
+- index.js in the routes folder (this was a template route file)
 
 _This is a student project that was created at [CodeOp](http://CodeOp.tech), a full stack development bootcamp in Barcelona._

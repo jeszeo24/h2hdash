@@ -3,10 +3,6 @@ import "./App.css";
 import TimeWeatherView from "./views/TimeWeatherView";
 import NotesView from "./views/NotesView";
 import LuckGameView from "./views/LuckGameView";
-// import UploadFile from "./components/UploadFile_Germinal";
-import Clock from "react-live-clock";
-import UploadForm from './components/UploadForm';
-import FileList from './components/FileList';
 import PhotoCarouselView from "./views/PhotoCarouselView"
 
 const API_KEY = "95e5614d843306eba8cca48f943be4f3";
