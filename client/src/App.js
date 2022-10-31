@@ -19,11 +19,11 @@ export default function App() {
   const [notes, setNotes] = useState([]);
   const [time, setTime] = useState("");
   const [files, setFiles] = useState([]);
-  const slides = [
-    "http://localhost:5000/clientfiles/post-it-note.png",
-    "https://picsum.photos/id/256/600/267",
-    "https://picsum.photos/id/264/600/267",
-]
+//   const slides = [
+//     "http://localhost:5000/clientfiles/post-it-note.png",
+//     "https://picsum.photos/id/256/600/267",
+//     "https://picsum.photos/id/264/600/267",
+// ]
 
   function getCities(city) {
     let newObj = { 
@@ -222,7 +222,8 @@ async function uploadFile(formData) {
 
   return (
     <div className="App">
-      <div className="container">
+      <div>
+      <div className="container-fluid">
         <div className="row">
     
           <div className="col-sm-6">
@@ -267,6 +268,7 @@ async function uploadFile(formData) {
 
         </div> {/* row end of div */}
 
+      </div>
       </div>
     </div>
   );

@@ -65,9 +65,9 @@ function PhotoCarouselView(props) {
 
   return (
     <div className="PhotoCarouselView">
-       <div className="carousel" style={{ maxWidth : props.width}}>
+       <div className="hcarousel" style={{ maxWidth : props.width}}>
            <div 
-           className="carousel-inner"
+           className="hcarousel-inner"
            style={{ transform: `translateX(${-currentSlide * 100}%)`, maxHeight : props.height }}>
                    {files.map((file, index) => (
                          <CarouselItem 

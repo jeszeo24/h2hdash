@@ -24,7 +24,7 @@ function NotesForm(props) {
         type="text"
         name="text"
         placeholder="Type to add a note..."
-        value={input.text}
+        value={input}
         onChange={handleChange}
       ></textarea>
 

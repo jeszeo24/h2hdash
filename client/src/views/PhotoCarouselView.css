@@ -13,7 +13,7 @@
     justify-content: center;
 }
 
-.carousel {
+.hcarousel {
     margin: 10px auto;
     overflow: hidden;
     max-width: 900px; 
@@ -21,7 +21,7 @@
     /* height: auto; */
 }
 
-.carousel-inner {
+.hcarousel-inner {
     white-space: nowrap;
     /* nowrap collapses white space as for normal but suppresses line breaks (text wrapping) within the source */
     transition: ease 1s;
