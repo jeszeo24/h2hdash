@@ -45,6 +45,9 @@ export default function App() {
       city: city, 
       weather: myWeather.weather[0].main,
       temperature: myWeather.main.temp,
+      feelslike: myWeather.main.feels_like,
+      mintemp: myWeather.main.temp_min,
+      maxtemp: myWeather.main.temp_max,
       icon: myWeather.weather[0].icon,
       time: myTime.datetime,
       timezone: myTime.timezone_location,
@@ -256,12 +259,9 @@ async function uploadFile(formData) {
         <LuckGameView />
         </div>
 
-        <h1>File Upload</h1>
 
-            <h2>Upload New File</h2>
             <UploadForm uploadCb={fd => uploadFile(fd)} />
 
-            <h2>All Files</h2>
             <FileList files={files} />
         
     </div>

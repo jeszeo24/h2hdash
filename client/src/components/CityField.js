@@ -22,7 +22,7 @@ function CityField(props) {
          <input
          type="text"
          name="city"
-         placeholder="   type in city to display weather and time..."
+         placeholder="   type in city and click submit to display weather and time..."
          value={city}
          onChange={handleChange} 
          />

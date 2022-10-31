@@ -1,6 +1,6 @@
 // IMPORTANT NOTE: From Jim's FiledUpload demo
 // NOTE: Also watched CodeOp's video here: https://www.youtube.com/watch?v=HU4wdKseOks&ab_channel=CodeOpTeam
-
+// More references: https://afteracademy.com/blog/file-upload-with-multer-in-nodejs-and-express
 
 var express = require("express");
 var router = express.Router();
@@ -17,11 +17,13 @@ const PUBLIC_DIR_URL = 'http://localhost:5000/clientfiles';
  * Multer initialization
  **/
 
- const storage = multer.diskStorage({
+ const storage = multer.diskStorage({ //storing files to disk, create a storage object using the diskStorage() method
+    // Both functions take 3 arguments, request object, file object and callback function
   destination: function(req, file, cb) {
       cb(null, './public/clientfiles');  // store files here
   },
   filename: function (req, file, cb) {
+      // 2 arguments to cb are null (as don't want to show any error) and file.originalname (using the same name of the file as they were uploaded)
       cb(null, file.originalname);  // keep original filename
   }
 });

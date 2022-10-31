@@ -46,25 +46,39 @@ function TimeWeather(props) {
         {c ? (
           <td key={c.id} className={`id${c.id}`}>
             <h2>{c.city}</h2>
-            <h3>{c.timezone}</h3>
+         
+            <div className="time">
+              {/* {c.time} */}
+              {dateTime.toString()}
+            </div>
+
+            <h4>{c.timezone}</h4>
+
             <div className="icon">
               <img src={`http://openweathermap.org/img/wn/${c.icon}@2x.png`} />
             </div>
 
             <div className="weather">
-              {c.weather} {c.temperature}°C
+              {c.weather}
             </div>
 
-            <div className="time">
-              {/* {c.time} */}
-              {dateTime.toString()}
-
-              <div>
-                {/* New time{newtime} */}
-                {/* NOTE: Breaks everything, invalid hook call? */}
-                {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={c.timezone_location}/> */}
-              </div>
+            <div className="temperature">
+              {c.temperature}°C
             </div>
+
+            <div className="feelslike">
+              Feels like {c.feelslike}°C
+            </div>
+
+            <div className="mintemp">
+              Min temp {c.mintemp}°C
+            </div>
+
+            <div className="maxtemp">
+              Max temp {c.maxtemp}°C
+            </div>
+
+            
           </td>
         ) : null}
       </table>
