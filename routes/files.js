@@ -60,8 +60,8 @@ router.post('/', upload.single('clientfile'), async function(req, res) {
   try {
       // Insert DB record; only save the filename, not the entire path
       let sql = `
-          INSERT INTO files (note, filename)
-          VALUES ('${clientnote}', '${req.file.originalname}')
+          INSERT INTO files (filename)
+          VALUES ('${req.file.originalname}')
       `;
       await db(sql);
 
