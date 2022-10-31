@@ -1,11 +1,11 @@
 .App {
   text-align: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
   background-color: #FAF7F0;
 }
 
-.gridsection {
+.col-sm-6 {
   border: solid 2px azure;
   border-radius: 1em;
   background-color: #BCCEF8 ; /* #BCCEF8 #C0EBE9 */

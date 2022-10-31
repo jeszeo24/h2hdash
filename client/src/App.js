@@ -222,53 +222,52 @@ async function uploadFile(formData) {
 
   return (
     <div className="App">
-      <div className="gridsection">
-       {/* Need to check if weather and time exists/loaded, then only display - if not, will receive error message "Cannot read properties of null as defined in useState*/}
-       <div className="timeweather">
-       <TimeWeatherView
-       // For TimeWeather component
-       cities={cities} 
-       compile={compile}
-       time={time}
-       // For CityField component
-       getCitiesCb={(city) => getCities(city)} 
-       />
-       </div>
+      <div className="container">
+        <div className="row">
+    
+          <div className="col-sm-6">
+            <TimeWeatherView
+            // For TimeWeather component
+            cities={cities} 
+            compile={compile}
+            time={time}
+            // For CityField component
+            getCitiesCb={(city) => getCities(city)} 
+            />
+          </div>
+
+          <div className="col-sm-6">
+            <NotesView 
+            addNoteCb={addNote} // send NotesView addNoteCb
+            notes={notes}
+            deleteCb={deleteNote}
+              />
+          </div>
+
+        </div> {/* row end of div */}
+  
+        <div className="row">
+          <div className="col-sm-6">
+            <PhotoCarouselView 
+            files={files}
+            interval={5000}
+            indicators
+            controls
+            autoPlay={true}
+            width="600px"
+            height="300px"
+            />
+          
+            <UploadForm uploadCb={fd => uploadFile(fd)} />
+          </div>
+
+          <div className="col-sm-6">
+          <LuckGameView />
+          </div>
+
+        </div> {/* row end of div */}
+
       </div>
-
-      <div className="gridsection">
-       <NotesView 
-       addNoteCb={addNote} // send NotesView addNoteCb
-       notes={notes}
-       deleteCb={deleteNote}
-        />
-        </div>
-
-        <div className="gridsection">
-          <div className="photocarousel">
-        <PhotoCarouselView 
-        files={files}
-        interval={5000}
-        indicators
-        controls
-        autoPlay={true}
-        width="600px"
-        height="300px"
-        />
-        
-        <UploadForm uploadCb={fd => uploadFile(fd)} />
-        </div>
-        </div>
-
-        <div className="gridsection">
-        <LuckGameView />
-        </div>
-
-
-       
-
-            {/* <FileList files={files} /> */}
-        
     </div>
   );
 }

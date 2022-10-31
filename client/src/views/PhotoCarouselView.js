@@ -47,7 +47,7 @@ function PhotoCarouselView(props) {
         }
     }
 
-    // Every tine the page rerendersm 
+    // Every time the page rerenders 
     useEffect(() => {
         startSlideTimer();
           return () => stopSlideTimer() // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
