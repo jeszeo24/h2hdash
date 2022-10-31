@@ -96,7 +96,8 @@ function PhotoCarouselView(props) {
             </div>  
 
             <div>
-                <UploadForm />
+                {/*Parent app passes uploadCb to PhotoCarouselView (props.uploadCb) which then passes it to UploadForm */}
+                <UploadForm uploadCb={props.uploadCb} />
             </div>
         </div>
     </div>

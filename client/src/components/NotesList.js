@@ -34,6 +34,7 @@ function dragOver(event) {
             <div className="footer">
                 {/* Because date also displays time, slice to only display date */}
             <small>{(n.date).slice(0,10)}</small>
+            {" "}
             <TbTrash 
             className="delete-icon"
             onClick={e => props.deleteCb2(n.id)} />

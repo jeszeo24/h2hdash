@@ -23,7 +23,7 @@ function UploadForm(props) {
         let formData = new FormData();
         formData.append('clientfile', file, file.name);
 
-        // Call parent's callback
+        // Call parent's callback, uploadCb function passed down by PhotoCarouselView
         props.uploadCb(formData);
 
         // Reset everything

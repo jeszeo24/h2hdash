@@ -21,13 +21,10 @@
   background-position: center;
   padding: 1rem;
   height: 170px;
-  margin-left: 0;
-  margin-right: 0;
-  
 }
 
 .NotesList .text {
-  margin-top: 20px;
+  margin-top: 16px;
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -37,7 +34,6 @@
   overflow-y: scroll;
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
-  width: 100%;
   font-size: small;
 }
 
@@ -46,6 +42,11 @@
 }
 
 .delete-icon {
+  cursor: pointer;
+}
+
+.delete-icon:hover {
+  background-color: #C1A5E3;
   cursor: pointer;
 }
 

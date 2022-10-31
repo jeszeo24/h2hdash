@@ -260,7 +260,6 @@ async function uploadFile(formData) {
             uploadCb={fd => uploadFile(fd)}
             />
           
-            <UploadForm uploadCb={fd => uploadFile(fd)} />
           </div>
 
           <div className="col-sm-6">

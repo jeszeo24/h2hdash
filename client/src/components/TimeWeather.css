@@ -3,25 +3,27 @@
 }
 
 .TimeWeather {
-  margin-left: 10px;
+  padding-left: 10px;
   margin-right: 10px;
 }
 
 .compile {
   font-size: medium;
-  height: 350px; /* height of each timeweather box */
+  /* height: 350px; height of each timeweather box */
   margin-top: 10px;
 }
 
-/* .compile td {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  padding-left: none;
-  width: 150px;
-  justify-content: center;
-} */
+.compile td {
+  padding-left: 2px;
+  padding-right: 2px;
+  width: 200px;
+  padding-bottom: 10px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  /* justify-content: center; */
+}
 
 .compile h2 {
-  margin-top: 20px; 
+  margin-top: 10px; 
   /* pushes down header, text etc */
 }
 

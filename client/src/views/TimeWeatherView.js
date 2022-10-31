@@ -9,15 +9,16 @@ function TimeWeatherView(props) {
 
     return (
         <div className="TimeWeatherView">
-            <div className="container-fluid">
+            {/* <div className="container"> */}
                 <CityField 
                 getCitiesCb2={props.getCitiesCb} 
                 /> 
             
                 {/* second parameter in map function is the index, passing index so that a unique id can be sent to TimeWeather to access each individual compile array object */}
-                <table className="cities">
+                <div className="cities">
+                <table className="row">
                 {props.cities.map((c, index) => (
-                    <td key={c.id}>
+                    <td key={c.id} className="col">
                     <TimeWeather 
                     compile={props.compile}
                     cities={props.cities}
@@ -28,8 +29,8 @@ function TimeWeatherView(props) {
                     </td>
                     ))}
                 </table>
-
-            </div>
+                </div>
+            {/* </div> */}
         </div>
         
     )

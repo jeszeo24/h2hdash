@@ -52,7 +52,7 @@ function TimeWeather(props) {
               {dateTime.toString()}
             </div>
 
-            <h4>{c.timezone}</h4>
+            {/* <h4>{c.timezone}</h4> */}
 
             <div className="icon">
               <img src={`http://openweathermap.org/img/wn/${c.icon}@2x.png`} />
@@ -64,10 +64,6 @@ function TimeWeather(props) {
 
             <div className="temperature">
               {c.temperature}°C
-            </div>
-
-            <div className="feelslike">
-              Feels like {c.feelslike}°C
             </div>
 
             <div className="mintemp">

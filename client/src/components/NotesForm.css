@@ -4,8 +4,8 @@
     flex-direction: column;
     width: 190px;
     height: 150px;
-    margin-top: 1.2em;
-    margin-left: 1.5em;
+    margin-top: 0.8em;
+    margin-left: 1em;
     border-radius: 15px;
 }
 
@@ -17,6 +17,7 @@ textarea {
     background-color: #67d7cc;
     padding: 1rem;
     min-height: 150px;
+    font-size: small;
     /* display: flex;
     flex-direction: column;
     justify-content: space-between; */
@@ -32,13 +33,13 @@ textarea:focus {
 
 .Notebutton {
     position: relative;
-    top: -16px;
+    top: -18px;
     background-color: rgb(233, 233, 233);
     border: none;
     border-radius: 15px;
     border-color: azure;
     padding: 5px 10px 5px 10px;
-    height: 3vh;
+    height: 3.2vh;
     font-size: 1.5vh;
 }
 
