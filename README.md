@@ -14,12 +14,13 @@ The purpose of the app is to facilitate long distance friendships/relationships 
 Run `npm run install` in the project folder to install dependencies related to Express (the server).
 
 There are additional node packages installed for purpose of both functionality and design. Please install them for optimal performance as listed below:
-- Run `npm install react-icons` in the project folder to install the react icon package which will provide the icons used within the app
+- Run `npm install react-icons` in the project folder to install the react icon package which will provide the icons used within the app.
 
 `cd client` and run `npm run install` install dependencies related to React (the client).
 
 ### Database Prep
 
+- You will need a MySQL server, if you do not have one already please see https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/installing.html for installation information.
 - Access the MySQL interface in your terminal by running `mysql -u root -p`
 - Create a new database called h2hdash: `create database h2hdash`
 - Add a `.env` file to the project folder of this repository containing the MySQL authentication information for MySQL user. For example:
@@ -46,7 +47,7 @@ There are additional node packages installed for purpose of both functionality a
 
 ### Run Your Development Servers
 
-- Run `npm start` in project directory to start the Express server on port 5000
+- Run `npm start` in project directory to start the Express server on port 5000.
 - In another terminal, do `cd client` and run `npm start` to start the client in development mode with hot reloading in port 3000.
 - You can test your client app in `http://localhost:3000`
 - You can test your API in `http://localhost:5000/notes` (only notes has placeholder data)
@@ -74,7 +75,7 @@ Please find below a few additional notes:
 
 2.) Please note that all uploaded files/images are stored in the public/clientfiles folder.
 
-3.) There are a few items/folders that you can disregards
+3.) There are a few items/folders that you can disregard:
 - the Extras folder under the Components folder (these were components that were created but not utilised_
 - index.js in the routes folder (this was a template route file)
 
