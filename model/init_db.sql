@@ -15,9 +15,16 @@ VALUES
 DROP TABLE IF EXISTS files;
 CREATE TABLE files (
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  note VARCHAR(500),
-  filename VARCHAR(500)
+  fieldname VARCHAR(500),
+  originalname VARCHAR(500),
+  encoding VARCHAR(500),
+  mimetype VARCHAR(500),
+  destination VARCHAR(500),
+  filename VARCHAR(500),
+  path VARCHAR(500),
+  size VARCHAR(500),
+  note VARCHAR(500)
 );
 
-INSERT INTO files (note, filename)
-VALUES ("Rawrrrr", "Rawrr rawrr rawrr");
+-- INSERT INTO files (filename)
+-- VALUES ("Rawrrrr", "Rawrr rawrr rawrr");

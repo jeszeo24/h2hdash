@@ -1,5 +1,6 @@
-// NOTE: Followed CodeOp's video here: https://www.youtube.com/watch?v=HU4wdKseOks&ab_channel=CodeOpTeam
-// And Jim's FiledUpload demo
+// IMPORTANT NOTE: From Jim's FiledUpload demo
+// NOTE: Also watched CodeOp's video here: https://www.youtube.com/watch?v=HU4wdKseOks&ab_channel=CodeOpTeam
+
 
 var express = require("express");
 var router = express.Router();
@@ -7,18 +8,14 @@ const db = require("../model/helper");
 // fs and path are not in package.json as they are preinstalled with Node
 var fs = require("fs"); // file system that is the library that allows you to interact with files (move, delete files etc)
 var path = require("path");
-const multer = require("multer")
-// // "npm install uuid" to create unique filenames
-// const { v4: uuidv4 } = require("uuid");
-// // allows something to read mime-type of file (eg. png, jpg)
-// var mime = require("mime-types");
+const multer = require("multer") // is a node.js middleware for handling mutlipart/form-data, which is primarily used for uploading files
+
 
 const PUBLIC_DIR_URL = 'http://localhost:5000/clientfiles';
 
 /**
  * Multer initialization
  **/
-
 
  const storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -52,6 +49,9 @@ router.get("/", function (req, res) {
 });
 
 // INSERT a new file into the DB
+// multer method (const upload = multer({dest:'uploads/'}).single("clientfile");) 
+// accepts an options object with dest propery, which tells Multer where to upload the files
+// multer({..}).single() which is used for uploading a single file
 router.post('/', upload.single('clientfile'), async function(req, res) {
   let { clientnote } = req.body;
 
@@ -71,6 +71,12 @@ router.post('/', upload.single('clientfile'), async function(req, res) {
   }
 });
 
+
+
+// // "npm install uuid" to create unique filenames
+// const { v4: uuidv4 } = require("uuid");
+// // allows something to read mime-type of file (eg. png, jpg)
+// var mime = require("mime-types");
 
 // router.post("/", async (req, res) => {
 //   // thanks to the fileUpload library, files are available at req.files

@@ -35,19 +35,6 @@ export default function App() {
     getCompile(city);
   }
 
-  async function getTime(city) {
-
-    let myTime = await getTime(city);
-  
-      let newObj = { 
-        id: cities.length,
-        time: myTime.timezone_location
-      }
-    
-      setCompile(time => [...time, newObj]);
-   }
-    console.log(compile);
-
  async function getCompile(city) {
 
   let myWeather = await getWeather(city);
@@ -61,7 +48,7 @@ export default function App() {
       icon: myWeather.weather[0].icon,
       time: myTime.datetime,
       timezone: myTime.timezone_location,
-      timeabb: myTime.timezone_abbreviation,
+      timezone_abbreviation: myTime.timezone_abbreviation,
       offset: myTime.gmt_offset
     }
   
@@ -269,15 +256,14 @@ async function uploadFile(formData) {
         <LuckGameView />
         </div>
 
-        {/* <h1>Let's Upload Files!</h1>
+        <h1>File Upload</h1>
 
             <h2>Upload New File</h2>
             <UploadForm uploadCb={fd => uploadFile(fd)} />
 
             <h2>All Files</h2>
-            <FileList files={files} /> */}
+            <FileList files={files} />
         
-        {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} /> */}
     </div>
   );
 }
