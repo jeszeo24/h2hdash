@@ -20,7 +20,7 @@ export default function App() {
   const [time, setTime] = useState("");
   const [files, setFiles] = useState([]);
   const slides = [
-    "https://picsum.photos/id/251/600/267",
+    "http://localhost:5000/clientfiles/post-it-note.png",
     "https://picsum.photos/id/256/600/267",
     "https://picsum.photos/id/264/600/267",
 ]
@@ -245,14 +245,19 @@ async function uploadFile(formData) {
         </div>
 
         <div className="gridsection">
+          <div className="photocarousel">
         <PhotoCarouselView 
-        slides={slides}
+        files={files}
         interval={5000}
         indicators
         controls
         autoPlay={true}
-        width="600px"/>
-  
+        width="600px"
+        height="300px"
+        />
+        
+        <UploadForm uploadCb={fd => uploadFile(fd)} />
+        </div>
         </div>
 
         <div className="gridsection">
@@ -260,9 +265,9 @@ async function uploadFile(formData) {
         </div>
 
 
-            <UploadForm uploadCb={fd => uploadFile(fd)} />
+       
 
-            <FileList files={files} />
+            {/* <FileList files={files} /> */}
         
     </div>
   );

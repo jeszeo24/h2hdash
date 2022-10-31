@@ -9,19 +9,20 @@ import "./PhotoCarouselView.css";
 function PhotoCarouselView(props) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideInterval = useRef();
-  let slides = props.slides;
+  let files = props.files;
+  console.log(files);
 
     // If index of current slide is more than 0, -1 from index to get previous if not show the last slide
     function prev() {
         startSlideTimer();
-        const index = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
+        const index = currentSlide > 0 ? currentSlide - 1 : files.length - 1;
         setCurrentSlide(index);
     }
 
     // If index of current slide is less than index of last slide, add one to index to get next slide, if not next slide will be the first (index 0)
     function next() {
         startSlideTimer();
-        const index = currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
+        const index = currentSlide < files.length - 1 ? currentSlide + 1 : 0;
         setCurrentSlide(index);
     }
 
@@ -34,7 +35,7 @@ function PhotoCarouselView(props) {
         if (props.autoPlay) {
             stopSlideTimer();
             slideInterval.current = setInterval(() => {
-                setCurrentSlide(currentSlide => currentSlide < slides.length - 1 ? currentSlide + 1 : 0)
+                setCurrentSlide(currentSlide => currentSlide < files.length - 1 ? currentSlide + 1 : 0)
             }, props.interval)
         }
     }
@@ -64,13 +65,13 @@ function PhotoCarouselView(props) {
 
   return (
     <div className="PhotoCarouselView">
-       <div className="carousel" style={{ maxWidth : props.width }}>
+       <div className="carousel" style={{ maxWidth : props.width}}>
            <div 
            className="carousel-inner"
-           style={{ transform: `translateX(${-currentSlide * 100}%)`}}>
-                   {slides.map((slide, index) => (
+           style={{ transform: `translateX(${-currentSlide * 100}%)`, maxHeight : props.height }}>
+                   {files.map((file, index) => (
                          <CarouselItem 
-                         slide={slide} 
+                         file={file} 
                          key={index}
                          stopSlideCb={stopSlideTimer}
                          startSlidecb={startSlideTimer}
@@ -79,7 +80,7 @@ function PhotoCarouselView(props) {
            </div>
 
            {props.indicators && <CarouselIndicators
-           slides={slides}
+           files={files}
            currentIndex={currentSlide}
            switchIndexCb = {switchIndex}
            />}

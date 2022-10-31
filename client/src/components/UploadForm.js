@@ -1,6 +1,6 @@
 // IMPORTANT NOTE: From Jim's FiledUpload demo
 // NOTE: Also watched CodeOp's video here: https://www.youtube.com/watch?v=HU4wdKseOks&ab_channel=CodeOpTeam
-
+import "./UploadForm.css";
 
 import React, { useState } from 'react';
 
@@ -21,7 +21,6 @@ function UploadForm(props) {
 
         // Create FormData obj and append everything to upload
         let formData = new FormData();
-        formData.append('clientnote', note);
         formData.append('clientfile', file, file.name);
 
         // Call parent's callback
@@ -36,24 +35,13 @@ function UploadForm(props) {
     return (
         <div className="UploadForm">
             <form onSubmit={handleSubmit}>
-                <label>
-                    Note
-                    <input 
-                        type="text"
-                        value={note}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
 
-                <label>
-                    File
                     <input 
                         type="file"
                         onChange={handleFileChange}
                         required
                     />
-                </label>
+
 
                 <button type="submit">Submit</button>
             </form>

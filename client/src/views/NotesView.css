@@ -1,7 +1,9 @@
 .NotesView {
-    max-height: 430px;
+    max-height: 400px;
     overflow: scroll;
 }
+
+/* The above sets the height of the container for both NotesView and TimeWeather */
 
 /* The below hides scrollbar but keeps functionality */
 .NotesView::-webkit-scrollbar {
