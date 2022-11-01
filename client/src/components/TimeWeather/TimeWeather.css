@@ -22,9 +22,12 @@
   /* justify-content: center; */
 }
 
-.compile h2 {
+.compile .city {
   margin-top: 10px; 
   /* pushes down header, text etc */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 .compile .id0 {

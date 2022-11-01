@@ -65,7 +65,6 @@ function PhotoCarouselView(props) {
 //   }, [])
 
 
-
   return (
     <div className="PhotoCarouselView">
         <div className="container-fluid">

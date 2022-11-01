@@ -1,5 +1,6 @@
-// NOTE: Reference from https://bobbyhadz.com/blog/javascript-convert-date-to-timezone
-import React, { useState, useEffect, useCallback } from "react";
+// NOTE: Reference time conversion from https://bobbyhadz.com/blog/javascript-convert-date-to-timezone
+// NOTE: Reference useCallback from https://www.youtube.com/watch?v=_AyFP5s69N4&ab_channel=WebDevSimplified
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import "./TimeWeather.css";
 
 function TimeWeather(props) {
@@ -9,8 +10,8 @@ function TimeWeather(props) {
   const [dateTime, setDateTime] = useState(new Date());
 
   // useCallback (from reactjs.org) Pass an inline callback and an array of dependencies. useCallback will return a memoized version of the callback that only changes if one of the dependencies has changed. This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders (e.g. shouldComponentUpdate).
-  const getDateTime = useCallback(() => {
-    if (c?.timezone) {
+  const getDateTime = useCallback(() => { // difference between useCallback and useMemo is that useCallback returns the actual function and not just the value of said function, which allows us to use the function later within the app (and pass parameters)
+    if (c?.timezone) { // breaks if use useMemo, maybe because c.timezone is delayed (from call to API) so no immediate value being passed
       const date = new Date();
       const dt = date.toLocaleString("en-US", {
         timeZone: c.timezone,
@@ -24,11 +25,11 @@ function TimeWeather(props) {
       });
       setDateTime(dt);
     }
-  }, [c?.timezone]);
+  }, [c?.timezone]); // array of dependencies 
 
   useEffect(() => {
     getDateTime();
-  }, [getDateTime]);
+  }, [getDateTime]); // useCallback when there are referential equality problems (when using other hooks such as useEffect/useMemo), when need to have the value inside the dependencies array
 
   useEffect(() => {
     const timerId = setInterval(() => getDateTime(), 1000);
@@ -45,7 +46,7 @@ function TimeWeather(props) {
         {/* NOTE: Having the list in an if statement because prob due to asynchronous nature, may not load */}
         {c ? (
           <td key={c.id} className={`id${c.id}`}>
-            <h2>{c.city}</h2>
+            <h2 className="city">{c.city}</h2>
          
             <div className="time">
               {/* {c.time} */}

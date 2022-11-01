@@ -13,20 +13,16 @@ export default function App() {
   const [compile, setCompile] = useState([]);
   const [error, setError] = useState("");
   const [notes, setNotes] = useState([]);
-  const [time, setTime] = useState("");
   const [files, setFiles] = useState([]);
-//   const slides = [
-//     "http://localhost:5000/clientfiles/post-it-note.png",
-//     "https://picsum.photos/id/256/600/267",
-//     "https://picsum.photos/id/264/600/267",
-// ]
 
-  function getCities(city) {
+
+  function getCities(city) { // city parameter received from CityField component
     let newObj = { 
       id: cities.length,
       city: city, 
     }
 
+    // 
     setCities(cities => [...cities, newObj]);
     getCompile(city);
   }
@@ -50,7 +46,7 @@ export default function App() {
       timezone_abbreviation: myTime.timezone_abbreviation,
       offset: myTime.gmt_offset
     }
-  
+
     setCompile(compile => [...compile, newObj]);
  }
   console.log(compile);
@@ -139,7 +135,7 @@ export default function App() {
     let options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(input) // send server JSON
+      body: JSON.stringify(input) // send server JSON ie. convert a JavaScript object into a string (when sending data to a web server, the data has to be a string)
     };
 
     try {
@@ -180,7 +176,7 @@ export default function App() {
 
   useEffect(() => {
     getFiles();
-}, []);
+}, []); //when the page renders, run getFiles()
 
 async function getFiles() {
     try {
@@ -227,8 +223,8 @@ async function uploadFile(formData) {
             // For TimeWeather component
             cities={cities} 
             compile={compile}
-            time={time}
-            // For CityField component
+           
+            // For CityField component, getCitiesCb is called where CityField passes the city parameter to App parent
             getCitiesCb={(city) => getCities(city)} 
             />
           </div>
@@ -245,7 +241,7 @@ async function uploadFile(formData) {
   
         <div className="row">
           <div className="col-sm-6">
-            <PhotoCarouselView 
+            <PhotoCarouselView
             files={files}
             interval={5000}
             indicators
