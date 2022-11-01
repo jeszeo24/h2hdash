@@ -9,6 +9,7 @@ function UploadForm(props) {
 
     function handleFileChange(event) {
         setFile(event.target.files[0]);
+        alert("File chosen. Click submit to display image!");
     }
 
     function handleSubmit(event) {
