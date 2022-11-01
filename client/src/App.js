@@ -231,9 +231,9 @@ async function uploadFile(formData) {
 
           <div className="col-sm-6">
             <NotesView 
-            addNoteCb={addNote} // send NotesView addNoteCb
+            addNoteCb={(input) => addNote(input)} // send NotesView addNoteCb and receive input from NotesView child
             notes={notes}
-            deleteCb={deleteNote}
+            deleteCb={(id) => deleteNote(id)} // receive id from child NotesView
               />
           </div>
 
@@ -249,7 +249,7 @@ async function uploadFile(formData) {
             autoPlay={true}
             width="600px"
             height="300px"
-            uploadCb={fd => uploadFile(fd)}
+            uploadCb={fd => uploadFile(fd)} // send uploadCb to UploadForm child and receive formData input
             />
           
           </div>

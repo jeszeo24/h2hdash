@@ -5,12 +5,7 @@ import "./UploadForm.css";
 import React, { useState } from 'react';
 
 function UploadForm(props) {
-    const [note, setNote] = useState('');
     const [file, setFile] = useState(null);
-
-    function handleChange(event) {
-        setNote(event.target.value);
-    }
 
     function handleFileChange(event) {
         setFile(event.target.files[0]);
@@ -26,8 +21,6 @@ function UploadForm(props) {
         // Call parent's callback, uploadCb function passed down by PhotoCarouselView
         props.uploadCb(formData);
 
-        // Reset everything
-        setNote('');
         setFile(null);  // remove filename of previous file
         event.target.reset();
     }

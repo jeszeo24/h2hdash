@@ -5,29 +5,28 @@ import { TbTrash } from "react-icons/tb"
 // NOTE: From https://react-icons.github.io/react-icons/
 // Sticky Notes Drag and Drop: https://www.youtube.com/watch?v=KcXsX1XXa2s&ab_channel=codebubb
 
-
-// NOTE: Drag function as per video not working
 function NotesList(props) {
-    function dropNote(event) {
-        event.target.style.left = `${event.pageX - 50}px`;
-        event.target.style.top = `${event.pageY - 50}px`;
-    }
+// NOTE: Drag function as per video not working (commented out)
+//     function dropNote(event) {
+//         event.target.style.left = `${event.pageX - 50}px`;
+//         event.target.style.top = `${event.pageY - 50}px`;
+//     }
 
-function dragOver(event) {
-    event.stopPropagation();
-    event.preventDefault();
-}
+// function dragOver(event) {
+//     event.stopPropagation();
+//     event.preventDefault();
+// }
 
   return (
-    <div className="NotesList" onDragOver={dragOver}>
+    <div className="NotesList" /* onDragOver={dragOver} */>
       <ul>
-        <NotesForm addNoteCb2={props.addNoteCb2}/>
+        <NotesForm addNoteCb3={(input) => props.addNoteCb2(input)}/> {/*calls the addNoteCb2 function within NotesView */}
         {props.searched.map(n => (
           <li key={n.id}>
         
         <div className="text"
-        draggable="true"
-        onDragEnd={dropNote}
+        // draggable="true"
+        // onDragEnd={dropNote}
         key={n.id}>
             {n.text}
 
@@ -37,7 +36,7 @@ function dragOver(event) {
             {" "}
             <TbTrash 
             className="delete-icon"
-            onClick={e => props.deleteCb2(n.id)} />
+            onClick={e => props.deleteCb2(n.id)} /> {/* onClick, send id to NotesView parent */}
             </div>
             </div>
     

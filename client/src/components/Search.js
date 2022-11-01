@@ -7,17 +7,10 @@ function Search(props) {
     
     function handleChange(event) {
         setInput(event.target.value);
-        props.searchCb(event.target.value); 
+        props.searchCb(event.target.value); // searchCb passed down by parent NotesView
         // not input, because line 9 is asynchronous
         // if want to do something right after, don't use state (don't need to wait for state to be updated)
     }
-
-    // function handleSubmit(event) {
-    //     event.preventDefault();
-    //     props.searchCb(input);
-    //     // props.resetAllCb(input);
-    //     setInput("");
-    // }
 
     return (
         <div className="search">

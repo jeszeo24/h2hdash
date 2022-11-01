@@ -11,7 +11,7 @@ function NotesForm(props) {
   function handleSubmit(event) {
     event.preventDefault();
     // receive addNoteCb from App parent, and pass input to parent
-    props.addNoteCb2(input);
+    props.addNoteCb3(input); // sends input to NotesForm component within NotesList
     setInput(""); // reset form fields
     // QUESTION: WHY IS IT NOT RESETTING?
   }

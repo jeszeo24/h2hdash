@@ -54,7 +54,7 @@ function PhotoCarouselView(props) {
           return () => stopSlideTimer() // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
       }, [])
 
-    //NOTE useEffect below: Every 3 seconds slide will change (through the index) if it's less than slides length, if false reverts to first image
+    //NOTE as REFERENCE useEffect below: Every 3 seconds slide will change (through the index) if it's less than slides length, if false reverts to first image
     // NOTE: Without transiton on carousel-inner div, image flashes/changes one by one
 //    useEffect(() => {
 //     const interval = setInterval(() => {
