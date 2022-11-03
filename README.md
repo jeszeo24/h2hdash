@@ -10,9 +10,9 @@ The purpose of the app is to facilitate long distance friendships/relationships 
 
 ### Dependencies
 
-Run `npm run install` in the project folder to install dependencies related to Express (the server).
+Run `npm install` in the project folder to install dependencies related to Express (the server).
 
-`cd client` and run `npm run install` install dependencies related to React (the client).
+`cd client` and run `npm install` install dependencies related to React (the client).
 
 ### Database Prep
 
