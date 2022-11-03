@@ -18,6 +18,3 @@ CREATE TABLE files (
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   filename VARCHAR(500)
 );
-
-INSERT INTO files (filename)
-VALUES ("MyGirls.jpeg");
