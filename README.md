@@ -8,12 +8,6 @@ The purpose of the app is to facilitate long distance friendships/relationships 
 
 ## Setup
 
-### Dependencies
-
-Run `npm install` in the project folder to install dependencies related to Express (the server).
-
-`cd client` and run `npm install` install dependencies related to React (the client).
-
 ### Database Prep
 
 - You will need a MySQL server, if you do not have one already please see `https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/installing.html` for installation information.
@@ -40,6 +34,12 @@ Run `npm install` in the project folder to install dependencies related to Expre
     
 ![Database Schema](support/database_schema.png)
 ![API routes](support/api_routes.png)
+
+### Dependencies
+
+Run `npm install` in the project folder to install dependencies related to Express (the server).
+
+`cd client` and run `npm install` install dependencies related to React (the client).
 
 ### Run Your Development Servers
 
