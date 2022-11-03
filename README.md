@@ -1,11 +1,10 @@
-# Heart2Heart Dash App
+# H2H Dash App
 
 A MVP from CodeOp's Full-Stack program, leveraging off front-end technologies such as React and React Router, along with CSS and Bootstrap for design. Back-end technologies of Node.js and Express were used, to connect client to server/database. Additional technologies used include Postman to test routes and MySQL for database creation. 
 
 The purpose of the app is to facilitate long distance friendships/relationships - enabling groups of friends/couples to view at a glance the time and weather in their respective cities/countries. A notes component allows individuals to leave notes/thoughts for each other, while the photo carousel explains itself well enough. Finally you have the LuckGame component which is just a fun feature that displays a country at random upon being played - perhaps suggesting to said group of friends/couples where they should reunite next.
 
 ![Problem & Solution Slide](support/problem_solution.png)
-![User Flow](support/user_flow.png)
 
 ## Setup
 
