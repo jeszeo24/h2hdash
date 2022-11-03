@@ -19,12 +19,8 @@ function NotesView(props) {
     console.log(tempNotes);
     setSearched(tempNotes);
   }
-
-//   function reset() {
-//     setSearched(props.notes);
-//     console.log(props.notes);
-//   }
     
+<<<<<<< HEAD
     return (
         <div className="NotesView container">
           <div className="row">
@@ -36,17 +32,49 @@ function NotesView(props) {
             </div>
 
             <div className="NotesList col-sm-8">
+||||||| d3e480d
+    return (
+        <div>
+            <Search 
+            searchCb={input => search(input)} />
+            {/* resetAllCb={reset}/> */}
+
+            <NotesForm addNoteCb2={props.addNoteCb}/> 
+            
+=======
+  return (
+      <div className="NotesView">
+        <div className="container-fluid">
+          <Search 
+          searchCb={input => search(input)} />
+
+          <div className="noteformlist">
+            {/* <NotesForm addNoteCb2={props.addNoteCb}/>  */}
+          
+>>>>>>> test
             <NotesList notes2={props.notes}
-            deleteCb2={props.deleteCb}
+            deleteCb2={(id) => props.deleteCb(id)} //send deleteCb2 to child NotesList, and receive id to pass to parent App
             searched={searched}
+            addNoteCb2={(input) => props.addNoteCb(input)} //calls the addNoteCb function from parent App
             // these are the notes that want to display in NotesList
-            // not calling the function, sending searched
+            // not calling the function, sending searched state
             />
+<<<<<<< HEAD
             </div>
             </div>
             </div>
         </div>
         
+||||||| d3e480d
+            
+        </div>
+        
+=======
+          </div>
+         </div>
+      </div>
+
+>>>>>>> test
     )
 }
 

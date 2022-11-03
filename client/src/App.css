@@ -4,7 +4,32 @@
 
 .App {
   text-align: center;
+<<<<<<< HEAD
   background-color: #C0EBE9;
   display: inline-block;
+||||||| d3e480d
+=======
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #FAF7F0;
+>>>>>>> test
 }
 
+<<<<<<< HEAD
+||||||| d3e480d
+.Background {
+  
+}
+=======
+.col-sm-6 {
+  border: solid 2px azure;
+  border-radius: 1em;
+  background-color: #BCCEF8 ; /* #BCCEF8 #C0EBE9 */
+  /* margin: 5px 5px 5px 5px; */
+}
+
+/* .gridsection .timeweather {
+  height: 300px;
+} */
+
+/* The above sets the timeweather div and hence the stickynotes div at a set height */
+>>>>>>> test

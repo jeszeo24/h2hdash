@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import countries from "i18n-iso-countries";
 // Country list downloaded via https://www.npmjs.com/package/i18n-iso-countries
 // Additional reference: https://javascript.plainenglish.io/create-a-country-select-component-with-react-2021-a259bd0350d5
@@ -50,8 +50,15 @@ function reset() {
 // QUESTION 2: How do I toggle between?
 
   return (
+<<<<<<< HEAD:client/src/views/LuckGameView.js
       <div className="LuckGameView container">
     <div className="LuckGame">
+||||||| d3e480d:client/src/views/LuckGame.js
+    <div className="LuckGame">
+=======
+    <div className="LuckGameView">
+        <div className="container-fluid">
+>>>>>>> test:client/src/views/LuckGame.js
             { pic ? 
             (
                 <div onClick={reset} className="country">
@@ -65,6 +72,7 @@ function reset() {
                 </div>
             )}
             <button onClick={handleClick}>Where to next?</button>
+        </div>
     </div>
     </div>
   );

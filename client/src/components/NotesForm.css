@@ -32,15 +32,29 @@ textarea:focus {
 }
 
 .Notebutton {
+<<<<<<< HEAD
     position: relative;
     top: -16px;
     background-color: rgb(233, 233, 233);
+||||||| d3e480d
+    background-color: #e1e1e1;
+=======
+    position: relative;
+    top: -18px;
+    background-color: rgb(233, 233, 233);
+>>>>>>> test
     border: none;
     border-radius: 15px;
     border-color: azure;
     padding: 5px 10px 5px 10px;
+<<<<<<< HEAD
     height: 3vh;
     font-size: 1.5vh;
+||||||| d3e480d
+=======
+    height: 3.2vh;
+    font-size: 1.5vh;
+>>>>>>> test
 }
 
 .Notebutton:hover {

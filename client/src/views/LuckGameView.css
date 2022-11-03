@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .LuckGameView {
     width: 100%;
     /* margin-right: auto;
@@ -60,3 +61,64 @@
     background-color: #C1A5E3;
     cursor: pointer;
 }
+||||||| d3e480d
+=======
+/* .LuckGameView {
+    max-height: 350px;
+    overflow: scroll;
+} */
+
+/* .LuckGameView::-webkit-scrollbar {
+    display: none;
+} */
+
+.LuckGameView .lucky img {
+    height: 275px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.LuckGameView .country {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    height: 250px;
+    background-image: url("https://media1.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif?cid=ecf05e47a9s6x37x2q2wlsxbq0y4su6n0dhx1wegqdpi0v9b&rid=giphy.gif&ct=g");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: none;
+    position: relative;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.LuckGameView .country .countrytext {
+    height: 300px;
+    font-size: 100px;
+    color: white;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6vh;
+    line-height: 6vh;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 300px;
+}
+
+.LuckGameView button {
+    border-radius: 10px;
+    border-color: azure;
+    width: 200px;
+    font-size: small;
+    margin-top: 5px;
+    height: 25px;
+}
+
+.LuckGameView button:hover {
+    background-color: #C1A5E3;
+    cursor: pointer;
+}
+
+>>>>>>> test

@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+.TimeWeather {
+  padding-left: 10px;
+  margin-right: 10px;
+}
+
+.compile {
+  font-size: medium;
+  /* height: 350px; height of each timeweather box */
+  margin-top: 10px;
+}
+
+.compile td {
+  padding-left: 2px;
+  padding-right: 2px;
+  width: 200px;
+  padding-bottom: 15px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  /* justify-content: center; */
+}
+
+.compile .city {
+  margin-top: 10px; 
+  /* pushes down header, text etc */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.compile .id0 {
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+.compile .id1 {
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
+.compile .id2 {
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+.compile .id3 {
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
+.compile .id4 {
+  background: linear-gradient(#e66465, #9198e5);
+}

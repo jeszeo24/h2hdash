@@ -4,15 +4,27 @@
     background-color: rgb(233, 233, 233);
     border-radius: 10px;
     padding: 5px;
+<<<<<<< HEAD
     margin-bottom: 0.5em;
     margin-top: 1em;
     margin-left: 1.5em;
     width: 95%;
     height: 3.5vh;
     font-size: 1.5vh;
+||||||| d3e480d
+    margin-bottom: 1.5em;
+=======
+    margin-bottom: 0.4em;
+    margin-top: 1em;
+    margin-left: 1.5em;
+    width: 95%;
+    height: 3.5vh;
+    font-size: 1.5vh;
+>>>>>>> test
 }
 
 .search input {
+
     border: none;
     background-color: rgb(233, 233, 233);
 }

@@ -5,7 +5,7 @@ function CarouselItem(props) {
 
   return (
     <div className="CarouselItem" onMouseEnter={props.stopSlideCb} onMouseOut={props.startSlideCb}>
-        <img src={props.slide}/>
+        <img src={props.file.url}/>
            </div>
   );
 }

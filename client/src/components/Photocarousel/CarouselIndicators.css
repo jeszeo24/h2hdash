@@ -2,13 +2,21 @@
     position: absolute;
     transform: translateX(-120%); /* repositions an element horizontally on the 2D plane */
     left: 50%; /* at absolute position, this places the indicator in the center */
+<<<<<<< HEAD:client/src/components/CarouselIndicators.css
     bottom: 3.2em; /* the larger the number, the higher up it is */
     z-index: 2; /* z-index specifies the stack order of an element, greater number in front of element with lower number */
+||||||| d3e480d:client/src/components/CarouselIndicators.css
+    bottom: 4.5em; /* the larger the number, the higher up it is */
+    z-index: 2;
+=======
+    bottom: 2em; /* the larger the number, the higher up it is */
+    z-index: 2;
+>>>>>>> test:client/src/components/Photocarousel/CarouselIndicators.css
 }
 
 .carousel-indicator-item {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     border: none;
     background: #fff;
     opacity: 0.5;

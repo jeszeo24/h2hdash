@@ -2,11 +2,21 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import TimeWeatherView from "./views/TimeWeatherView";
 import NotesView from "./views/NotesView";
+<<<<<<< HEAD
 import LuckGameView from "./views/LuckGameView";
 // import UploadFile from "./components/UploadFile_Germinal";
 import Clock from "react-live-clock";
 import UploadForm from './components/UploadForm';
 import FileList from './components/FileList';
+||||||| d3e480d
+import LuckGame from "./views/LuckGame";
+// import UploadFile from "./components/UploadFile_Germinal";
+import Clock from "react-live-clock";
+import UploadForm from './components/UploadForm';
+import FileList from './components/FileList';
+=======
+import LuckGameView from "./views/LuckGameView";
+>>>>>>> test
 import PhotoCarouselView from "./views/PhotoCarouselView"
 
 const API_KEY = "95e5614d843306eba8cca48f943be4f3";
@@ -17,36 +27,19 @@ export default function App() {
   const [compile, setCompile] = useState([]);
   const [error, setError] = useState("");
   const [notes, setNotes] = useState([]);
-  const [time, setTime] = useState("");
   const [files, setFiles] = useState([]);
-  const slides = [
-    "https://picsum.photos/id/251/600/267",
-    "https://picsum.photos/id/256/600/267",
-    "https://picsum.photos/id/264/600/267",
-]
 
-  function getCities(city) {
+
+  function getCities(city) { // city parameter received from CityField component
     let newObj = { 
       id: cities.length,
       city: city, 
     }
 
+    // 
     setCities(cities => [...cities, newObj]);
     getCompile(city);
   }
-
-  async function getTime(city) {
-
-    let myTime = await getTime(city);
-  
-      let newObj = { 
-        id: cities.length,
-        time: myTime.timezone_location
-      }
-    
-      setCompile(time => [...time, newObj]);
-   }
-    console.log(compile);
 
  async function getCompile(city) {
 
@@ -58,11 +51,16 @@ export default function App() {
       city: city, 
       weather: myWeather.weather[0].main,
       temperature: myWeather.main.temp,
+      feelslike: myWeather.main.feels_like,
+      mintemp: myWeather.main.temp_min,
+      maxtemp: myWeather.main.temp_max,
       icon: myWeather.weather[0].icon,
       time: myTime.datetime,
-      timezone: myTime.timezone_location
+      timezone: myTime.timezone_location,
+      timezone_abbreviation: myTime.timezone_abbreviation,
+      offset: myTime.gmt_offset
     }
-  
+
     setCompile(compile => [...compile, newObj]);
  }
   console.log(compile);
@@ -151,7 +149,7 @@ export default function App() {
     let options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(input) // send server JSON
+      body: JSON.stringify(input) // send server JSON ie. convert a JavaScript object into a string (when sending data to a web server, the data has to be a string)
     };
 
     try {
@@ -192,7 +190,7 @@ export default function App() {
 
   useEffect(() => {
     getFiles();
-}, []);
+}, []); //when the page renders, run getFiles()
 
 async function getFiles() {
     try {
@@ -229,6 +227,7 @@ async function uploadFile(formData) {
 }
 
   return (
+<<<<<<< HEAD
     <div className="App container-fluid">
       {/* If using container, responsive pixel width (but this is set, smaller than whole page) versus container-fluid provides width 100% across */}
       <div className="row">
@@ -278,6 +277,95 @@ async function uploadFile(formData) {
         {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} /> */}
         </div>
     </div>
+||||||| d3e480d
+    <div className="App">
+
+       {/* Need to check if weather and time exists/loaded, then only display - if not, will receive error message "Cannot read properties of null as defined in useState*/}
+       <TimeWeatherView
+       // For TimeWeather component
+       cities={cities} 
+       compile={compile}
+       time={time}
+       // For CityField component
+       getCitiesCb={(city) => getCities(city)} 
+       />
+
+       <NotesView 
+       addNoteCb={addNote} // send NotesView addNoteCb
+       notes={notes}
+       deleteCb={deleteNote}
+        />
+
+        <LuckGame />
+
+        <PhotoCarouselView 
+        slides={slides}
+        interval={5000}
+        indicators
+        controls
+        autoPlay={true}
+        width="600px"/>
+
+        <h1>Let's Upload Files!</h1>
+
+            <h2>Upload New File</h2>
+            <UploadForm uploadCb={fd => uploadFile(fd)} />
+
+            <h2>All Files</h2>
+            <FileList files={files} />
+        
+        {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} /> */}
+=======
+    <div className="App">
+      <div>
+      <div className="container-fluid">
+        <div className="row">
+    
+          <div className="col-sm-6">
+            <TimeWeatherView
+            // For TimeWeather component
+            cities={cities} 
+            compile={compile}
+           
+            // For CityField component, getCitiesCb is called where CityField passes the city parameter to App parent
+            getCitiesCb={(city) => getCities(city)} 
+            />
+          </div>
+
+          <div className="col-sm-6">
+            <NotesView 
+            addNoteCb={(input) => addNote(input)} // send NotesView addNoteCb and receive input from NotesView child
+            notes={notes}
+            deleteCb={(id) => deleteNote(id)} // receive id from child NotesView
+              />
+          </div>
+
+        </div> {/* row end of div */}
+  
+        <div className="row">
+          <div className="col-sm-6">
+            <PhotoCarouselView
+            files={files}
+            interval={5000}
+            indicators
+            controls
+            autoPlay={true}
+            width="600px"
+            height="300px"
+            uploadCb={fd => uploadFile(fd)} // send uploadCb to UploadForm child and receive formData input
+            />
+          
+          </div>
+
+          <div className="col-sm-6">
+          <LuckGameView />
+          </div>
+
+        </div> {/* row end of div */}
+
+      </div>
+      </div>
+>>>>>>> test
     </div>
   );
 }

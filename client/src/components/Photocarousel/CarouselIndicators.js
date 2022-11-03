@@ -6,7 +6,7 @@ function CarouselIndicators(props) {
   return (
     <div className="carousel-indicators">
         {/* _ used in instead of slide, as slide not used below (_ stands for any parameter) */}
-        {props.slides.map((_, index) => (
+        {props.files.map((_, index) => (
             <button key={index} className={`carousel-indicator-item ${
                 props.currentIndex === index ? "active" : ""
             }`}

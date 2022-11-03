@@ -2,8 +2,10 @@
     display: inline-block; 
     /* causes the items to be next to each other */
     width: 100%; 
+    margin-top: 10px;
 }
 
 .CarouselItem img {
-    width: 100%;
+    max-width: 600px;
+    max-height: 275px;
 }

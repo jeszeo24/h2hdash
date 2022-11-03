@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .TimeWeatherView {
   width: 100%;
   /* margin-right: auto;
@@ -32,4 +33,49 @@
 
 .theview {
   height: 100px;
+||||||| d3e480d
+.cities {
+    display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: hidden;
+  font-size: 20px;
+  list-style: none;
+  /* height: 300px; */
+=======
+/* .cities {
+    display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: hidden;
+  font-size: 20px;
+  list-style: none;
+  /* height: 300px; */
+*/
+
+.TimeWeatherView {
+  /* width: 100%; */
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.cities {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; */
+  /* NOTES: fr stands for fraction, proportion of available space. https://medium.com/@r_tripti/css-grids-all-about-fr-units-36b7b5fea661*/
+  /* max-width: 730px; */
+  max-height: 340px; /* height of each city box */
+  overflow: scroll;
+} 
+
+.cities td {
+  border-spacing: none;
+}
+
+/* The below hides scrollbar but keeps functionality */
+.cities::-webkit-scrollbar {
+  display: none;
+}
+
+.cities .row .col {
+  min-width: 200px;
+>>>>>>> test
 }
