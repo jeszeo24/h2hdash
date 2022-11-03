@@ -12,9 +12,6 @@ The purpose of the app is to facilitate long distance friendships/relationships 
 
 Run `npm run install` in the project folder to install dependencies related to Express (the server).
 
-There are additional node packages installed for purpose of both functionality and design. Please install them for optimal performance as listed below:
-- Run `npm install react-icons` in the project folder to install the react icon package which will provide the icons used within the app.
-
 `cd client` and run `npm run install` install dependencies related to React (the client).
 
 ### Database Prep
